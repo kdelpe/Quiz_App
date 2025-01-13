@@ -36,11 +36,10 @@ This application uses client-server architecture. The server handles question se
 ---
 
 ## Team Members and Roles
-- **[Member 1 Name]**: Team Leader, responsible for [e.g., server setup, backend logic].
-- **[Member 2 Name]**: [e.g., Frontend development, CSS styling].
+- **[Kervens Delpe]**: Team Leader, responsible for [e.g., server setup, backend logic].
+- **[Angel Difo]**: [e.g., Frontend development, CSS styling].
 - **[Member 3 Name]**: [e.g., API integration, question randomization logic].
 - **[Member 4 Name]**: [e.g., Testing and debugging, deployment].
-- **[Additional members as necessary]**
 
 ---
 
