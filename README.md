@@ -1,16 +1,16 @@
-# Project 2: Quiz App
+# Project 2: Trivia Quiz
 
 ## Table of Contents
 - [Overview](#overview)
 - [Features](#features)
 - [Team Members and Roles](#team-members-and-roles)
-- [How to Run the Server](#how-to-run-the-server)
+- [How to Run the App](#how-to-run-the-app)
 - [Demo](#demo)
 
 ---
 
 ## Overview
-The Quiz App is a simple yet dynamic application where users can test their knowledge through a 10-question quiz. The app comprises three main pages:
+Trivia Quiz is a simple yet dynamic application where users can test their knowledge through a 10-question quiz. The app comprises three main pages:
 1. **Home Page**: Allows users to start the quiz.
 2. **Quiz Page**: Displays the quiz questions with answer options.
 3. **Results Page**: Shows the user’s score after completing the quiz.
@@ -43,7 +43,7 @@ This application uses client-server architecture. The server handles question se
 
 ---
 
-## How to Run the Server
+## How to Run the App
 1. Clone this repository:
    ```bash
    git clone [repository-url]
