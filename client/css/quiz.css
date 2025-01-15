@@ -22,7 +22,7 @@ body {
   main {
     padding: 20px;
     margin-bottom: 60px;
-    overflow-y: auto;
+    overflow-y:auto;
     text-align: center;
     max-height: calc(100vh - 120px);
   }
@@ -72,7 +72,7 @@ body {
   }
   
   footer {
-    position: absolute;
+    position: relative;
     bottom: 10px;
     text-align: center;
     width: 100%;

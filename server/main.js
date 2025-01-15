@@ -1,45 +1,28 @@
-const http = require('http');
+const express = require('express');
 const fs = require('fs');
 const path = require('path');
 
+const app = express();
 const PORT = process.env.PORT || 3000;
 
-const server = http.createServer((req, res) => {
-  if (req.url === '/' && req.method === 'GET') {
-    serveFile(res, path.join(__dirname, '../client/html/home.html'), 'text/html');
-  } else if (req.url === '/quiz' && req.method === 'GET') {
-    serveFile(res, path.join(__dirname, '../client/html/quiz.html'), 'text/html');
-  } else if (req.url === '/result' && req.method === 'GET') {
-    serveFile(res, path.join(__dirname, '../client/html/result.html'), 'text/html');
-  } else if (req.url === '/questions' && req.method === 'GET') {
-    serveRandomQuestions(res);
-  } else if (req.url.startsWith('/client/css/') && req.method === 'GET') {
-    serveFile(res, path.join(__dirname, '..', req.url), 'text/css');
-  } else if (req.url.startsWith('/client/js/') && req.method === 'GET') {
-    serveFile(res, path.join(__dirname, '..', req.url), 'application/javascript');
-  } else {
-    res.writeHead(404, { 'Content-Type': 'text/plain' });
-    res.end('404 Not Found');
-  }
+app.use('/client',express.static(path.join(__dirname, "../client")));
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/html/home.html'));
 });
 
-function serveFile(res, filePath, contentType) {
-  fs.readFile(filePath, (err, content) => {
-    if (err) {
-      res.writeHead(500, { 'Content-Type': 'text/plain' });
-      res.end('500 Internal Server Error');
-    } else {
-      res.writeHead(200, { 'Content-Type': contentType });
-      res.end(content, 'utf-8');
-    }
-  });
-}
+app.get('/quiz', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/html/quiz.html'));
+});
 
-function serveRandomQuestions(res) {
+app.get('/result', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/html/result.html'));
+});
+
+app.get('/questions', (req, res) => {
   fs.readFile(path.join(__dirname, '../data/questions.json'), (err, data) => {
     if (err) {
-      res.writeHead(500, { 'Content-Type': 'text/plain' });
-      res.end('500 Internal Server Error');
+      res.status(500).send('500 Internal Server Error');
       return;
     }
     const questions = JSON.parse(data);
@@ -49,16 +32,15 @@ function serveRandomQuestions(res) {
       answer: q.answer
     }));
     const randomQuestions = getRandomQuestions(transformedQuestions, 10);
-    res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify(randomQuestions));
+    res.json(randomQuestions);
   });
-}
+});
 
 function getRandomQuestions(questions, count) {
   const shuffled = questions.sort(() => 0.5 - Math.random());
   return shuffled.slice(0, count);
 }
 
-server.listen(PORT, () => {
+app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}/`);
 });
