@@ -36,10 +36,9 @@ This application uses client-server architecture. The server handles question se
 ---
 
 ## Team Members and Roles
-- **Kervens Delpe**: Team Leader, [e.g., server setup, backend logic, question randomization, Testing, Debugging, Deployment].
+- **Kervens Delpe**: Team Leader, [e.g., server setup, backend logic, Testing, Debugging].
 - **Angel Difo**: [e.g., Frontend development, CSS styling, Testing, Debugging].
-- **[Member 3 Name]**: [e.g., Frontend development, CSS styling, Testing, Debugging].
-- **[Member 4 Name]**: [e.g., Frontend development, CSS styling, Testing, Debugging].
+- **Michael Esteban**: [e.g., Frontend development, CSS styling, Testing, Debugging].
 
 ---
 
@@ -47,21 +46,23 @@ This application uses client-server architecture. The server handles question se
 1. Clone this repository:
    ```bash
    git clone [repository-url]
-
-2. Navigate to the server directory:
-   ```bash
-   cd server
    ```
+
+2. Change into the repository directory
+   ```bash
+   cd [project_directory]
+   ```
+
 3. Install dependencies:
    ```bash
    npm install
    ```
 4. Start the server:
    ```bash
-   node index.js
+   npm start
    ```
 5. Open the client in your browser:
-   - Visit `http://localhost:[PORT]` to access the Quiz App.
+   - Visit `http://localhost:[PORT]` 
 
 ---
 
