@@ -20,7 +20,40 @@ body {
   }
   
   main {
+    padding: 20px;
+    margin-bottom: 60px;
+    overflow-y: auto;
     text-align: center;
+    max-height: calc(100vh - 120px);
+  }
+
+  #quiz-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .question {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .question h2 {
+    margin-top: 0;
+  }
+  
+  .question p {
+    margin: 10px 0;
+  }
+  
+  .question label {
+    display: block;
+    margin: 5px 0;
   }
   
   button {
@@ -31,6 +64,7 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 10px;
   }
   
   button:hover {
