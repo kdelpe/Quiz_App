@@ -4,7 +4,7 @@
 - [Overview](#overview)
 - [Features](#features)
 - [Team Members and Roles](#team-members-and-roles)
-- [How to Run the App](#how-to-run-the-app)
+- [How to Run the Server](#how-to-run-the-server)
 - [Demo](#demo)
 
 ---
@@ -43,7 +43,7 @@ This application uses client-server architecture. The server handles question se
 
 ---
 
-## How to Run the App
+## How to Run the Server
 1. Clone this repository:
    ```bash
    git clone [repository-url]
