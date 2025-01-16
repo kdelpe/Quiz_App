@@ -1,0 +1,105 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
+    margin: 0;
+    background: linear-gradient(to right, #c94b4b, #4b134f);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Sign Up Box */
+.signup-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    background-color: white;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    margin: 20px 20px;
+}
+
+.signup-form h1 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.signup-form p {
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+.signup-form label {
+    font-size: 13px;
+}
+
+.signup-form input {
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    height: 35px;
+    border: lightgrey 1px solid;
+}
+
+.signup-form input[type="submit"] {
+    margin-top: 10px;
+    color: azure;
+    font-size: large;
+    height: 40px;
+    background-color: #4b134f;
+    border-radius: 20px;
+}
+
+.signup-form input[type="submit"]:hover {
+    background-color: #c94b4b;
+}
+
+/* Home Button */
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-top: 5px;
+}
+
+.container button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: #420e1a;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #c94b4b;
+}
+
+/* Footer */
+footer {
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    width: 100%;
+    color: white;
+}

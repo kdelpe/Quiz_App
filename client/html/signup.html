@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="/client/css/signup.css" />
+</head>
+<body>
+    <!--- Main --->
+    <main>
+        <!--- Sign Up Box --->
+        <div class = "signup-container">
+            <form method = "GET" action = "/" class = "signup-form">
+                <h1> Sign up </h1>
+                <p> Already have an account? <a href = "/client/html/login.html"> Log in</a></p>
+                <label for = "username"> Username </label>
+                <input id = "username" type = "text" name = "username">
+                <label for = "email"> Email </label>
+                <input id = "email" type = "email" name = "email">
+                <label for = "password"> Password </label>
+                <input id = "password" type = "password" name = "password">
+                <input type = "submit" value = "Sign up">
+            </form>
+        </div>
+
+        <!--- Home Button --->
+        <div class = "container">
+            <button id="home-btn"> Home </button>
+        </div>
+    </main>
+    <!--- Footer --->
+    <footer>
+        <p>&copy; 2025 Trivia Quiz</p>
+    </footer>
+    <script src="/client/js/login.js"></script>
+</body>
+</html>

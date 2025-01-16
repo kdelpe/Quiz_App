@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/client/css/login.css" />
+</head>
+<body>
+    <!--- Main --->
+    <main>
+        <!--- Login Box --->
+        <div class = "login-container">
+            <form method = "GET" action = "/" class = "login-form">
+                <h1> Log in </h1>
+                <p>Or <a href = "/client/html/signup.html">create an account</a></p>
+                <label for = "email"> Email </label>
+                <input id = "email" type = "email" name = "email">
+                <label for = "password"> Password </label>
+                <input id = "password" type = "password" name = "password">
+                <input type = "submit" value = "Log in">
+            </form>
+        </div>
+
+        <!--- Home Button --->
+        <div class = "container">
+            <button id="home-btn"> Home </button>
+        </div>
+    </main>
+    <!--- Footer --->
+    <footer>
+        <p>&copy; 2025 Trivia Quiz</p>
+    </footer>
+    <script src="/client/js/login.js"></script>
+</body>
+</html>
