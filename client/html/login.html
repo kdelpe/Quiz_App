@@ -12,13 +12,21 @@
       <div class="cube"></div>
       <div class="cube"></div>
       <div class="cube"></div>
+      <nav class="navbar">
+        <div class="navbar-left">
+          <img src="/images/logos/logo.png" alt="Logo" class="logo" />
+        </div>
+        <div class="navbar-right">
+          <a href="/client/html/home.html" id="return-button">Home Page</a>
+        </div>
+      </nav>
       <header>
         <h1>Welcome</h1>
       </header>
       <main class="login-container">
         <form method="GET" action="/" class="login-form">
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
+          <input type="text" placeholder="Enter Your Username" required />
+          <input type="password" placeholder="Enter Your Password" required />
           <input id="login-button" type="button" value="Log in" />
           <a href="/client/html/signup.html">Don't have an account? Register</a>
         </form>
