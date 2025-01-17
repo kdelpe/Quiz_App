@@ -7,7 +7,7 @@ body {
     justify-content: center;
     height: 100vh;
     margin: 0;
-    background-color: #f0f0f0;
+    background: linear-gradient(to right, #c94b4b, #4b134f);
   }
   
   header {
@@ -16,7 +16,7 @@ body {
   
   h1 {
     font-size: 2.5em;
-    color: #333;
+    color: white;
   }
   
   main {
@@ -59,8 +59,8 @@ body {
   button {
     padding: 10px 20px;
     font-size: 1.2em;
-    color: #fff;
-    background-color: #007bff;
+    color: #420e1a;
+    background-color: rgb(255, 255, 255);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -68,7 +68,7 @@ body {
   }
   
   button:hover {
-    background-color: #0056b3;
+    background-color: #c94b4b;
   }
   
   footer {
@@ -76,5 +76,5 @@ body {
     bottom: 10px;
     text-align: center;
     width: 100%;
-    color: #777;
+    color: white;
   }
