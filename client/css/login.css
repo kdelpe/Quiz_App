@@ -10,7 +10,7 @@ body {
     background: #FFF;
   }
 
-  /* animated backgroun */
+  /* animated background */
   .background {
     background: linear-gradient(132deg, #FC415A, #591BC5, #212335);
     background-size: 400% 400%;
@@ -62,6 +62,38 @@ body {
     top: 10vh;
   }
   /* =================================== */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
+    top: 5%;
+}
+
+.navbar-left .logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 20px;
+}
+
+.navbar-right #return-button {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+    padding: 10px 30px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin-right: 50px;
+}
+
+.navbar-right #return-button:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
   
 header {
     position: absolute;
@@ -80,7 +112,7 @@ h1 {
     margin-top: 8%;
 }
 
-/* Header content & title & button*/
+/* Login Container */
 .login-container {
     margin-top:17%;
     text-align: center;
@@ -95,11 +127,16 @@ h1 {
 }
 
 .login-form input {
+  font-size: large;
     border-radius: 5px;
-    margin-top: 5px;
+    margin-top: 30px;
     margin-bottom: 20px;
     height: 50px;
     border: #EFEEF5 1px solid;
+}
+
+.input .placeholder {
+  text-align: center;
 }
  
 .login-container #login-button {
