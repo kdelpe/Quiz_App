@@ -1,6 +1,3 @@
-document.getElementById('return-button').addEventListener('click', async function() {
-    window.location.href = '/';
-});
 
 document.getElementById('login-button').addEventListener('click', async function() {
     const username = document.querySelector('input[type="text"]').value;

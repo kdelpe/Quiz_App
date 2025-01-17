@@ -70,25 +70,27 @@ body {
     background-color: transparent;
     position: absolute;
     width: 100%;
-    top: 5%;
+    top: 4%;
 }
 
 .navbar-left .logo {
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
-    margin-left: 20px;
+    margin-left: 30px;
 }
 
 .navbar-right #return-button {
     text-decoration: none;
     color: #000;
-    font-size: 16px;
-    padding: 10px 30px;
+    font-size: 20px;
+    padding: 10px 20px;
     border: 1px solid #000;
-    border-radius: 5px;
+    border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.8);
-    margin-right: 50px;
+    margin-right: 150px;
+    z-index: 10;
+    position: relative;
 }
 
 .navbar-right #return-button:hover {
@@ -109,12 +111,12 @@ h1 {
     font-size: 3em;
     color: white;
     text-align: center;
-    margin-top: 8%;
+    margin-top: 10%;
 }
 
 /* Login Container */
 .login-container {
-    margin-top:17%;
+    margin-top: 18%;
     text-align: center;
     color:  #EFEEF5;
 }
