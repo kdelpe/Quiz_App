@@ -2,6 +2,7 @@ document.getElementById('view-results-btn').addEventListener('click', function()
     window.location.href = '/result';
   });
 
+
 document.addEventListener('DOMContentLoaded', async () => {
   try {
     const response = await fetch('/questions');

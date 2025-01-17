@@ -1,52 +1,190 @@
-/* This is just a placeholder for now before styling the home page */
+/* This is just a placeholder for now before styling the results page */
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  font-family: 'Josefin Sans', sans-serif;
+  box-sizing: border-box;
+}
+.container-fluid{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background: #FFF;
+}
+
+  /* animated backgroun */
+  .background {
+    background: linear-gradient(132deg, #FC415A, #591BC5, #212335);
+    background-size: 400% 400%;
+    animation: Gradient 15s ease infinite;
+    position: relative;
     height: 100vh;
-    margin: 0;
-    background: linear-gradient(to right, #c94b4b, #4b134f);
+    width: 100%;
+    overflow: hidden;
+    padding:0;
+    margin:0px;
   }
+  .cube {
+    position: absolute;
+    top: 80vh;
+    left: 45vw;
+    width: 10px;
+    height: 10px;
+    border: solid 1px #D7D4E4;
+    transform-origin: top left;
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    animation: cube 10s ease-in forwards infinite;
+  }
+  .cube:nth-child(2n) {
+    border-color: #FFF ;
+  }
+  .cube:nth-child(2) {
+    animation-delay: 200ms;
+    left: 25vw;
+    top: 40vh;
+  }
+  .cube:nth-child(3) {
+    animation-delay: 500ms;
+    left: 75vw;
+    top: 50vh;
+  }
+  .cube:nth-child(4) {
+    animation-delay: 700ms;
+    left: 90vw;
+    top: 10vh;
+  }
+  .cube:nth-child(5) {
+    animation-delay: 900ms;
+    left: 10vw;
+    top: 85vh;
+  }
+  .cube:nth-child(6) {
+    animation-delay: 1s;
+    left: 50vw;
+    top: 10vh;
+  }
+  /* =================================== */
   
-  header {
-    margin-bottom: 20px;
+  header{
+    position: absolute;
+    top:0%;
+    left: 0%;
+    width:100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
   }
   
   h1 {
-    font-size: 2.5em;
+    font-size: 3em;
     color: white;
-  }
-  
-  main {
     text-align: center;
-  }
-
-  .container {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .container button {
-    margin: 10px;
-    padding: 10px 20px;
-    font-size: 1.2em;
-    color: #420e1a;
-    background-color: rgb(255, 255, 255);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    margin-top: 15%;
   }
   
-  button:hover {
-    background-color: #c94b4b;
-  }
+/* Header content & title & button*/
+.home-content{
+  margin-top:25%;
+  text-align: center;
+  color:  #EFEEF5;
+}
   
-  footer {
-    position: absolute;
-    bottom: 10px;
-    text-align: center;
-    width: 100%;
-    color: white;
+.home-content #login-btn{
+  width: 140px;
+  margin:20px 10px;
+  color: #591BC5;
+  font-size: 17px;
+  border:1px solid #EFEEF5;
+  font-weight: 500;
+  background: #EFEEF5;
+  border-radius: 20px;
+  padding: 10px;
+  cursor:pointer;
+  transition: .3s;
+}
+.home-content #login-btn:hover{
+  border-radius: 0;
+}
+
+.home-content #signup-btn{
+  width: 140px;
+  margin:20px 10px;
+  color: #591BC5;
+  font-size: 17px;
+  border:1px solid #EFEEF5;
+  font-weight: 500;
+  background: #EFEEF5;
+  border-radius: 20px;
+  padding: 10px;
+  cursor:pointer;
+  transition: .3s;
+}
+
+.home-content #signup-btn:hover{
+  border-radius: 0;
+}
+.home-content #start-quiz-btn{
+  width: 140px;
+  margin:20px 10px;
+  color: #591BC5;
+  font-size: 17px;
+  border:1px solid #EFEEF5;
+  font-weight: 500;
+  background: #EFEEF5;
+  border-radius: 20px;
+  padding: 10px;
+  cursor:pointer;
+  transition: .3s;
+}
+
+.home-content #start-quiz-btn:hover{
+  border-radius: 0;
+}
+
+.home-content #view-leaderboard-btn{
+  width: 140px;
+  margin:20px 10px;
+  color: #591BC5;
+  font-size: 17px;
+  border:1px solid #EFEEF5;
+  font-weight: 500;
+  background: #EFEEF5;
+  border-radius: 20px;
+  padding: 10px;
+  cursor:pointer;
+  transition: .3s;
+}
+
+.home-content #view-leaderboard-btn:hover{
+  border-radius: 0;
+}
+  
+footer {
+  position: absolute;
+  bottom: 10px;
+  text-align: center;
+  width: 100%;
+  color: #777;
+}
+
+  /* Animate Background*/
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
   }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes cube {
+  from {
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    opacity: 1;
+  }
+  to {
+    transform: scale(20) rotate(960deg) translate(-50%, -50%);
+    opacity: 0;
+  }
+}

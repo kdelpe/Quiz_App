@@ -6,22 +6,27 @@
     <title>Home</title>
     <link rel="stylesheet" href="/client/css/home.css" />
   </head>
-  <body>
-    <header>
-      <h1>Trivia Quiz Home</h1>
-    </header>
-    <main>
-      <div class = "container">
-          <button id="login-btn"> Log in </button>
-          <button id="signup-btn"> Sign up</button>
+  <body class="container-fluid">
+    <div class="background">
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <header>
+        <h1>Trivia Quiz</h1>
+      </header>
+      <main class="home-content">
+        <div class="container">
+          <button id="login-btn">Log in</button>
+          <button id="signup-btn">Sign up</button>
           <button id="start-quiz-btn">Play Trivia!</button>
-          <button id="view-leaderboard-btn">View Leaderboard</button>
-
-      </div>
-    </main>
-    <footer>
-      <p>&copy; 2025 Trivia Quiz</p>
-    </footer>
-    <script src="/client/js/home.js"></script>
+          <button id="view-leaderboard-btn">Leaderboard</button>
+        </div>
+      </main>
+      <footer>
+        <p>&copy; 2025 Trivia Quiz</p>
+      </footer>
+      <script src="/client/js/home.js"></script>
+    </div>
   </body>
 </html>
