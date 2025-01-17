@@ -11,17 +11,15 @@ app.use('/images',express.static(path.join(__dirname, "../images")));
 
 const homeRoute = require('./routes/home');
 const quizRoute = require('./routes/quiz');
-const questionsRoute = require('./routes/questions');
 const leaderboardRoute = require('./routes/leaderboard');
 const loginRoute = require('./routes/login');
 const signupRoute = require('./routes/signup');
 
 app.use('/', homeRoute);
-app.use('/quiz', quizRoute);
-app.use('/questions', questionsRoute);
-app.use('/leaderboard', leaderboardRoute);
-app.use('/login', loginRoute);
 app.use('/signup', signupRoute);
+app.use('/login', loginRoute);
+app.use('/quiz', quizRoute);
+app.use('/leaderboard', leaderboardRoute);
 
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}/`);
