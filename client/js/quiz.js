@@ -102,17 +102,50 @@ function updateProgress() {
     progressBar.setAttribute('aria-valuenow', progress);
 }
   
-function showResults() {
+async function updateLeaderboard(score) {
+    const currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+    if (!currentUser) {
+        console.error('No user logged in');
+        return;
+    }
+
+    try {
+        const response = await fetch('/leaderboard/update-score', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                username: currentUser.username,
+                score: score.toString()
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to update score');
+        }
+    } catch (error) {
+        console.error('Error updating leaderboard:', error);
+    }
+}
+
+async function showResults() {
+    // Update leaderboard with the final score
+    await updateLeaderboard(score);
+
     quizContainer.innerHTML = `
-                <div class="results">
-                    <div class="result-icon">
-                        <i class="fas ${score > quizData.length / 2 ? 'fa-trophy text-success' : 'fa-times-circle text-danger'}"></i>
-                    </div>
-                    <div class="score">Your score: ${score}/${quizData.length}</div>
-                    <p>${score > quizData.length / 2 ? 'Great job!' : 'Better luck next time!'}</p>
-                    <button class="btn btn-primary" onclick="location.reload()">Restart Quiz</button>
-                </div>
-            `;
+        <div class="results">
+            <div class="result-icon">
+                <i class="fas ${score > quizData.length / 2 ? 'fa-trophy text-success' : 'fa-times-circle text-danger'}"></i>
+            </div>
+            <div class="score">Your score: ${score}/${quizData.length}</div>
+            <p>${score > quizData.length / 2 ? 'Great job!' : 'Better luck next time!'}</p>
+            <div class="button-container">
+                <button class="btn btn-primary" onclick="location.reload()">Restart Quiz</button>
+                <button class="btn btn-secondary" onclick="window.location.href='/leaderboard'">View Leaderboard</button>
+            </div>
+        </div>
+    `;
 }
   
 nextBtn.addEventListener('click', () => {
