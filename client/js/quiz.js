@@ -130,7 +130,27 @@ async function updateLeaderboard(score) {
 }
 
 async function showResults() {
-    // Update leaderboard with the final score
+    const backgroundMusic = document.getElementById('background-music');
+    if (backgroundMusic) {
+        backgroundMusic.pause();
+        backgroundMusic.currentTime = 0; // Reset playback position
+    }
+
+    let resultMusic;
+    if (score <= 1) {
+        resultMusic = '/audio/lowest-score-audio.mp3';
+    } else if (score <= 4) {
+        resultMusic = '/audio/low-score-audio.mp3';
+    } else if (score <= 6) {
+        resultMusic = '/audio/medium-score-audio.mp3';
+    } else {
+        resultMusic = '/audio/high-score-audio.mp3';
+    }
+
+    // Play the selected audio based on scores
+    const resultAudio = new Audio(resultMusic);
+    resultAudio.play();
+
     await updateLeaderboard(score);
 
     quizContainer.innerHTML = `

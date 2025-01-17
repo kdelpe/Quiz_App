@@ -7,11 +7,16 @@
         },
         {
             "rank": "2",
+            "user": "kerv",
+            "score": "10"
+        },
+        {
+            "rank": "3",
             "user": "bla",
             "score": "5"
         },
         {
-            "rank": "3",
+            "rank": "4",
             "user": "Angel",
             "score": "0"
         }
