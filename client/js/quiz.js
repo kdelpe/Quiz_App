@@ -137,19 +137,25 @@ async function showResults() {
     }
 
     let resultMusic;
+    let resultGif;
     if (score <= 1) {
         resultMusic = '/audio/lowest-score-audio.mp3';
+        resultGif = 'https://media.giphy.com/media/xT1XGWbE0XiBDX2T8Q/giphy.gif?cid=790b7611qhtg1jb8p46pob1u29km790yz6ry46bs1ho8cmel&ep=v1_gifs_search&rid=giphy.gif&ct=g';
     } else if (score <= 4) {
         resultMusic = '/audio/low-score-audio.mp3';
+        resultGif = 'https://media.giphy.com/media/ORXoD0V3d9u2QPzBLX/giphy.gif?cid=790b7611xgk5k4vbiy67u3vly83njk4vbi5hqvje3bmobw5t&ep=v1_gifs_search&rid=giphy.gif&ct=g';
     } else if (score <= 6) {
         resultMusic = '/audio/medium-score-audio.mp3';
+        resultGif = 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjd1czZ3MDl3emlhMzR0aDVvZnhiNDl3NWdwMnJzMHdqZGN5M2F3ZyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/4PT6v3PQKG6Yg/giphy.gif';
     } else {
         resultMusic = '/audio/high-score-audio.mp3';
+        resultGif = 'https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTdhYnFsNmphcXBocW8wZHFkcDR4MnNwZDQ5azA1aXNiOWE4YW92ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0MYt5jPR6QX5pnqM/giphy.gif';
     }
 
     // Play the selected audio based on scores
     const resultAudio = new Audio(resultMusic);
     resultAudio.play();
+    resultAudio.loop = true;
 
     await updateLeaderboard(score);
 
@@ -163,6 +169,9 @@ async function showResults() {
             <div class="button-container">
                 <button class="btn btn-primary" onclick="location.reload()">Restart Quiz</button>
                 <button class="btn btn-secondary" onclick="window.location.href='/leaderboard'">View Leaderboard</button>
+            </div>
+            <div class="result-gif">
+                <img src="${resultGif}" alt=""/>
             </div>
         </div>
     `;
