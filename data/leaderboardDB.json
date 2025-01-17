@@ -1,0 +1,19 @@
+{
+    "leaderboard": [
+        {
+            "rank": "1",
+            "user": "Johnny B",
+            "score": "10"
+        },
+        {
+            "rank": "2",
+            "user": "bla",
+            "score": "5"
+        },
+        {
+            "rank": "3",
+            "user": "Angel",
+            "score": "0"
+        }
+    ]
+}
