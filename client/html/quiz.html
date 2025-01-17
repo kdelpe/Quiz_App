@@ -11,16 +11,29 @@
     <link rel="stylesheet" href="/client/css/quiz.css" />
   </head>
   <body>
-    <header>
-      <h1>Trivia Quiz Questions Page</h1>
-    </header>
-    <main>
-      <section id="quiz-container"></section>
-      <button id="view-results-btn">View Results Page</button>
-    </main>
-    <footer>
-      <p>&copy; 2025 Trivia Quiz</p>
-    </footer>
+    <div class="quiz-container" id="quiz">
+      <div class="quiz-header">
+        <h1>Trivia Quiz</h1>
+        <div class="progress">
+          <div
+            class="progress-bar"
+            role="progressbar"
+            style="width: 0%"
+            aria-valuenow="0"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          ></div>
+        </div>
+      </div>
+      <div id="question-container">
+        <p class="question" id="question"></p>
+        <div class="options" id="options"></div>
+      </div>
+      <div class="quiz-footer">
+        <div class="timer" id="timer">Time: 30s</div>
+        <button class="btn btn-primary" id="next-btn">Next</button>
+      </div>
+    </div>
     <audio
       id="background-music"
       src="/audio/Jeopardy-theme-song.mp3"
