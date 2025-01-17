@@ -14,7 +14,7 @@ const leaderboardRoute = require('./routes/leaderboard');
 const loginRoute = require('./routes/login');
 const signupRoute = require('./routes/signup');
 
-app.use('/home', homeRoute);
+app.use('/', homeRoute);
 app.use('/quiz', quizRoute);
 app.use('/result', resultRoute);
 app.use('/questions', questionsRoute);
