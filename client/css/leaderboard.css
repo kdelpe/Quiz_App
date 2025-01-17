@@ -1,0 +1,77 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to right, #c94b4b, #4b134f);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Leaderboard Box */
+
+.leaderboard-container {
+    background-color: white;
+    max-width: 400px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.heading {
+    border: solid black;
+    display: flex; 
+    justify-content: center;
+}
+
+.score-table {
+    width: 400px;
+}
+
+.score-table table{
+    border: solid black 1px;
+    border-collapse: collapse;
+    width: 400px;
+    text-align: center;
+}
+
+.score-table th {
+    border: solid black 1px;
+}
+
+.score-table td {
+    border-right: solid black 1px;
+    border-bottom: solid black 1px;
+}
+
+.container {
+    margin-top: 20px;
+    display: flex;
+  }
+
+.container button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: #420e1a;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #c94b4b;
+}
+
+/* Footer */
+footer {
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    width: 100%;
+    color: white;
+}
