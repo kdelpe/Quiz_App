@@ -96,7 +96,7 @@ body {
   margin: 20px auto;
 }
   
-.header-content button{
+.header-content #retake-button{
   width: 140px;
   margin:20px 10px;
   color: #591BC5;
@@ -109,17 +109,34 @@ body {
   cursor:pointer;
   transition: .3s;
 }
-.header-content button:hover{
+.header-content #retake-button:hover{
+  border-radius: 0;
+}
+.header-content #home-button{
+  width: 140px;
+  margin:20px 10px;
+  color: #591BC5;
+  font-size: 17px;
+  border:1px solid #EFEEF5;
+  font-weight: 500;
+  background: #EFEEF5;
+  border-radius: 20px;
+  padding: 10px;
+  cursor:pointer;
+  transition: .3s;
+}
+
+.header-content #home-button:hover{
   border-radius: 0;
 }
   
-  footer {
-    position: absolute;
-    bottom: 10px;
-    text-align: center;
-    width: 100%;
-    color: #777;
-  }
+footer {
+  position: absolute;
+  bottom: 10px;
+  text-align: center;
+  width: 100%;
+  color: #777;
+}
 
   /* Animate Background*/
 @keyframes Gradient {
