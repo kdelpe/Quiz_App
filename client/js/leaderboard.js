@@ -17,19 +17,23 @@ async function loadLeaderboard() {
             entry.rank = (index + 1).toString();
         });
 
-        // Get the table body
-        const tableBody = document.querySelector('.score-table tbody');
-        tableBody.innerHTML = ''; // Clear existing entries
+        // Get the leaderboard list container
+        const leaderboardList = document.querySelector('.leaderboard-list');
+        leaderboardList.innerHTML = ''; // Clear existing entries
         
-        // Add sorted entries to the table
+        // Add sorted entries
         sortedLeaderboard.forEach(entry => {
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td>${entry.rank}</td>
-                <td>${entry.user}</td>
-                <td>${entry.score}</td>
+            const entryElement = document.createElement('div');
+            entryElement.className = 'leaderboard-entry';
+            entryElement.setAttribute('data-rank', entry.rank);
+            
+            entryElement.innerHTML = `
+                <div class="rank">#${entry.rank}</div>
+                <div class="user">${entry.user}</div>
+                <div class="score">${entry.score} pts</div>
             `;
-            tableBody.appendChild(row);
+            
+            leaderboardList.appendChild(entryElement);
         });
     } catch (error) {
         console.error('Error loading leaderboard:', error);

@@ -1,8 +1,8 @@
 document.getElementById('login-button').addEventListener('click', async function() {
-    const email = document.querySelector('input[type="email"]').value;
+    const username = document.querySelector('input[type="text"]').value;
     const password = document.querySelector('input[type="password"]').value;
 
-    if (!email || !password) {
+    if (!username || !password) {
         alert('Please fill in all fields');
         return;
     }
@@ -13,7 +13,7 @@ document.getElementById('login-button').addEventListener('click', async function
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ email, password })
+            body: JSON.stringify({ username, password })
         });
 
         const data = await response.json();
@@ -24,7 +24,7 @@ document.getElementById('login-button').addEventListener('click', async function
             alert('Login successful!');
             window.location.href = '/';
         } else {
-            alert(data.error || 'Invalid email or password');
+            alert(data.error || 'Invalid username or password');
         }
     } catch (error) {
         console.error('Error:', error);

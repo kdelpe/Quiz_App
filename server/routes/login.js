@@ -9,7 +9,7 @@ router.use(express.json());
 // POST for user login
 router.post('/', async (req, res) => {
     try {
-        const { email, password } = req.body;
+        const { username, password } = req.body;
         
         // Read users data
         const userDBPath = path.join(__dirname, '../../data/userDB.json');
@@ -17,7 +17,7 @@ router.post('/', async (req, res) => {
         const userDB = JSON.parse(data);
         
         // Find user and verify password
-        const user = userDB.users.find(u => u.email === email && u.password === password);
+        const user = userDB.users.find(u => u.username === username && u.password === password);
         
         if (user) {
             res.json({ 
