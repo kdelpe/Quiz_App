@@ -8,8 +8,8 @@ document.getElementById('signup-btn').addEventListener('click', function() {
 
 document.getElementById('start-quiz-btn').addEventListener('click', function() {
     window.location.href = '/quiz';
-  });
+});
 
 document.getElementById('view-leaderboard-btn').addEventListener('click', function() {
     window.location.href = '/leaderboard';
-  });
+});

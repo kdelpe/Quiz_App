@@ -19,7 +19,6 @@ document.getElementById('signup-button').addEventListener('click', async functio
             return;
         }
 
-        // Add new user
         data.users.push({
             username,
             email,

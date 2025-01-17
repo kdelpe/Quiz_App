@@ -153,9 +153,9 @@ async function showResults() {
     }
 
     // Play the selected audio based on scores
-    const resultAudio = new Audio(resultMusic);
-    resultAudio.play();
-    resultAudio.loop = true;
+    // const resultAudio = new Audio(resultMusic);
+    // resultAudio.play();
+    // resultAudio.loop = true;
 
     await updateLeaderboard(score);
 
