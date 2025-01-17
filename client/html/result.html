@@ -6,16 +6,24 @@
     <title>Quiz Result</title>
     <link rel="stylesheet" href="/client/css/result.css" />
   </head>
-  <body>
-    <header>
-      <h1>Quiz Result Page</h1>
-    </header>
-    <main>
-      <h2>Quiz Results</h2>
-      <p id="result-text">You scored 0 out of 0.</p>
-      <button id="retake-quiz-btn">Retake Quiz</button>
-    </main>
-    <footer></footer>
-    <script src="/client/js/result.js"></script>
+  <body class="container-fluid">
+    <div class="background">
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <header>
+        <h1>Leaderboard</h1>
+      </header>
+      <main class="header-content">
+        <h3>
+          Insert a table somewhere here to show the leaders with the scores
+        </h3>
+        <button id="retake-button">Play Again</button>
+        <button id="home-button">Home</button>
+      </main>
+      <footer></footer>
+      <script src="/client/js/result.js"></script>
+    </div>
   </body>
 </html>

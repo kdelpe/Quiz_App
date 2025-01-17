@@ -1,105 +1,164 @@
-* {
-    box-sizing: border-box;
-}
-
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh; 
+    font-family: 'Josefin Sans', sans-serif;
+    box-sizing: border-box;
+  }
+  .container-fluid{
+    height: 100%;
     margin: 0;
-    background: linear-gradient(to right, #c94b4b, #4b134f);
+    padding: 0;
+    width: 100%;
+    background: #FFF;
+  }
+
+  /* animated backgroun */
+  .background {
+    background: linear-gradient(132deg, #FC415A, #591BC5, #212335);
+    background-size: 400% 400%;
+    animation: Gradient 15s ease infinite;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    padding:0;
+    margin:0px;
+  }
+  .cube {
+    position: absolute;
+    top: 80vh;
+    left: 45vw;
+    width: 10px;
+    height: 10px;
+    border: solid 1px #D7D4E4;
+    transform-origin: top left;
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    animation: cube 10s ease-in forwards infinite;
+  }
+  .cube:nth-child(2n) {
+    border-color: #FFF ;
+  }
+  .cube:nth-child(2) {
+    animation-delay: 500ms;
+    left: 25vw;
+    top: 40vh;
+  }
+  .cube:nth-child(3) {
+    animation-delay: 1s;
+    left: 75vw;
+    top: 50vh;
+  }
+  .cube:nth-child(4) {
+    animation-delay: 2s;
+    left: 90vw;
+    top: 10vh;
+  }
+  .cube:nth-child(5) {
+    animation-delay: 3s;
+    left: 10vw;
+    top: 85vh;
+  }
+  .cube:nth-child(6) {
+    animation-delay: 4s;
+    left: 50vw;
+    top: 10vh;
+  }
+  /* =================================== */
+  
+header {
+    position: absolute;
+    top:0%;
+    left: 0%;
+    width:100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+  
+h1 {
+    font-size: 3em;
+    color: white;
+    text-align: center;
+    margin-top: 8%;
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Sign Up Box */
+/* Header content & title & button*/
 .signup-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 400px;
-    background-color: white;
+    margin-top:17%;
+    text-align: center;
+    color:  #EFEEF5;
 }
 
 .signup-form {
     display: flex;
     flex-direction: column;
-    width: 350px;
-    margin: 20px 20px;
-}
-
-.signup-form h1 {
-    margin-top: 10px;
-    margin-bottom: 5px;
-}
-
-.signup-form p {
-    margin-top: 0;
-    margin-bottom: 16px;
-}
-
-.signup-form label {
-    font-size: 13px;
+    width: 450px;
+    margin: 50px auto;
 }
 
 .signup-form input {
     border-radius: 5px;
     margin-top: 5px;
     margin-bottom: 20px;
-    height: 35px;
-    border: lightgrey 1px solid;
+    height: 50px;
+    border: #EFEEF5 1px solid;
 }
-
-.signup-form input[type="submit"] {
-    margin-top: 10px;
-    color: azure;
-    font-size: large;
-    height: 40px;
-    background-color: #4b134f;
+ 
+.signup-container #signup-button {
+    width: 140px;
+    margin:20px 150px;
+    color: #591BC5;
+    font-size: 22px;
+    border:1px solid #EFEEF5;
+    font-weight: 500;
+    background: #EFEEF5;
     border-radius: 20px;
+    padding: 10px;
+    cursor:pointer;
+    transition: .3s;
 }
 
-.signup-form input[type="submit"]:hover {
-    background-color: #c94b4b;
+.signup-container #signup-button:hover {
+    border-radius: 0;
 }
 
-/* Home Button */
-.container {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    margin-top: 5px;
+.signup-container a {
+    color: #EFEEF5;
+    text-decoration: underline;
+    font-size: 20px;
+    margin-top: 20px;
 }
 
-.container button {
-    margin: 10px;
-    padding: 10px 20px;
-    font-size: 1.2em;
-    color: #420e1a;
-    background-color: rgb(255, 255, 255);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.signup-container a:hover {
+    color: #c6d8b8;
 }
 
-button:hover {
-    background-color: #c94b4b;
-}
-
-/* Footer */
 footer {
-    position: absolute;
-    bottom: 10px;
-    text-align: center;
-    width: 100%;
-    color: white;
+  position: absolute;
+  bottom: 10px;
+  text-align: center;
+  width: 100%;
+  color: white;
+}
+
+    /* Animate Background*/
+@keyframes Gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes cube {
+    from {
+        transform: scale(0) rotate(0deg) translate(-50%, -50%);
+        opacity: 1;
+    }
+    to {
+        transform: scale(20) rotate(960deg) translate(-50%, -50%);
+        opacity: 0;
+    }
 }
