@@ -1,3 +1,3 @@
-document.getElementById('home-btn').addEventListener('click', function() {
+document.getElementById('signup-button').addEventListener('click', function() {
     window.location.href = '/';
   });

@@ -1,3 +1,4 @@
-document.getElementById('home-btn').addEventListener('click', function() {
+document.getElementById('login-button').addEventListener('click', function() {
     window.location.href = '/';
   });
+
