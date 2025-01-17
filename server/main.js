@@ -6,6 +6,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use('/audio', express.static(path.join(__dirname, '../audio')));
 app.use('/client',express.static(path.join(__dirname, "../client")));
+app.use('/data',express.static(path.join(__dirname, "../data")));
 
 const homeRoute = require('./routes/home');
 const quizRoute = require('./routes/quiz');
