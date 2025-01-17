@@ -12,6 +12,11 @@ body {
 }
 
 /* Leaderboard Box */
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .leaderboard-container {
     background-color: white;
