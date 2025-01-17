@@ -59,6 +59,7 @@ function selectOption(selectedButton, optionIndex) {
 }
   
 function startTimer() {
+    timerEl.textContent = `Time: ${timeLeft}s`;
     timer = setInterval(() => {
         timeLeft--;
         timerEl.textContent = `Time: ${timeLeft}s`;
@@ -115,6 +116,7 @@ function showResults() {
 }
   
 nextBtn.addEventListener('click', () => {
+    clearInterval(timer);
     checkAnswer();
     currentQuestion++;
     if (currentQuestion < quizData.length) {
