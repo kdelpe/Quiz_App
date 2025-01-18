@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Liberty";
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/907368/liberty.otf");
+}
+
 body {
   font-family: 'Josefin Sans', sans-serif;
   box-sizing: border-box;
@@ -92,12 +97,13 @@ body {
 .navbar-right #return-button {
   text-decoration: none;
   color: #591BC5;
-  font-size: 20px;
-  padding: 10px 20px;
+  font-size: 22px;
+  font-weight: 500;
+  padding: 10px;
   border: 1px solid #EFEEF5;
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.8);
-  margin-right: 150px;
+  margin-right: 120px;
   z-index: 10;
   position: relative;
 }
@@ -116,16 +122,107 @@ header {
   text-align: center;
 }
 
-h1 {
-  font-size: 3em;
-  color: white;
-  text-align: center;
-  margin-top: 10%;
+.text {
+  font-family: "Liberty";
+  font-weight: 100;
+  font-size: 6rem;
+  letter-spacing: -0.25em;
+  flex-flow: row;
+}
+
+.text .letter {
+  color: #d9fdff;
+  text-shadow: 0 0 2rem #00f0ff;
+  display: inline-block;
+}
+
+body .text .letter.letter-2 {
+  transform: translate(-0.2rem, 1rem) rotate(10deg);
+  -webkit-animation: flicker 2s ease-in-out infinite alternate;
+  animation: flicker 2s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes flicker {
+  0% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  5% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  5.5% {
+    opacity: 0;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  6% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  6.5% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  7% {
+    opacity: 0;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  8% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(13deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  5% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  5.5% {
+    opacity: 0;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  6% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  6.5% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  7% {
+    opacity: 0;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  8% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(13deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
 }
 
 /* ================= Sign Up Container =================*/
 .signup-container {
-  margin-top:17%;
+  margin-top:20%;
   text-align: center;
   color:  #EFEEF5;
 }
@@ -139,11 +236,24 @@ h1 {
 
 .signup-form input {
   font-size: large;
-  border-radius: 5px;
+  font-weight: bold;
+  border-radius: 20px;
   margin-top: 5px;
   margin-bottom: 20px;
   height: 50px;
   border: #EFEEF5 1px solid;
+}
+
+.signup-form input[type="text"],
+.signup-form input[type="email"],
+.signup-form input[type="password"] {
+    text-align: center; 
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    font-size: 20px;
 }
 
 .signup-container #signup-button {
@@ -180,7 +290,7 @@ position: absolute;
 bottom: 10px;
 text-align: center;
 width: 100%;
-color: white;
+color: EFEEF5;
 }
 
   /* ================== Animate Background ==================*/

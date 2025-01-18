@@ -1,14 +1,22 @@
+@font-face {
+  font-family: "Liberty";
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/907368/liberty.otf");
+}
+
 body {
-    font-family: 'Josefin Sans', sans-serif;
-    box-sizing: border-box;
-  }
-  .container-fluid{
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    background: #FFF;
-  }
+  font-family: 'Josefin Sans', sans-serif;
+  box-sizing: border-box;
+}
+
+.container-fluid{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background: #FFF;
+}
+
+/* ============== animated background ============== */
 
 .background {
   background: linear-gradient(132deg, #FC415A, #591BC5, #212335);
@@ -78,7 +86,7 @@ body {
   background-color: transparent;
   position: absolute;
   width: 100%;
-  top: 4%;
+  top: 3%;
 }
 
 .navbar-left .logo {
@@ -91,12 +99,13 @@ body {
 .navbar-right #return-button {
   text-decoration: none;
   color: #591BC5;
-  font-size: 20px;
-  padding: 10px 20px;
+  font-size: 22px;
+  font-weight: 500;
+  padding: 10px;
   border: 1px solid #000;
-  border-radius: 10px;
+  border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.8);
-  margin-right: 150px;
+  margin-right: 100px;
   z-index: 10;
   position: relative;
 }
@@ -115,16 +124,107 @@ header {
   text-align: center;
 }
   
-h1 {
-  font-size: 3em;
-  color: white;
-  text-align: center;
-  margin-top: 10%;
+.text {
+  font-family: "Liberty";
+  font-weight: 100;
+  font-size: 6rem;
+  letter-spacing: -0.25em;
+  flex-flow: row;
+}
+
+.text .letter {
+  color: #d9fdff;
+  text-shadow: 0 0 2rem #00f0ff;
+  display: inline-block;
+}
+
+body .text .letter.letter-2 {
+  transform: translate(-0.2rem, 1rem) rotate(10deg);
+  -webkit-animation: flicker 2s ease-in-out infinite alternate;
+  animation: flicker 2s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes flicker {
+  0% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  5% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  5.5% {
+    opacity: 0;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  6% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  6.5% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  7% {
+    opacity: 0;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  8% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(13deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  5% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  5.5% {
+    opacity: 0;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  6% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  6.5% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  7% {
+    opacity: 0;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  8% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(13deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
 }
 
 /* =============== Login Container ================= */
 .login-container {
-  margin-top: 18%;
+  margin-top: 20%;
   text-align: center;
   color:  #EFEEF5;
 }
@@ -138,11 +238,23 @@ h1 {
 
 .login-form input {
   font-size: large;
-  border-radius: 5px;
-  margin-top: 30px;
+  font-weight: bold;
+  border-radius: 20px;
+  margin-top: 10px;
   margin-bottom: 20px;
   height: 50px;
   border: #EFEEF5 1px solid;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    text-align: center; 
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    font-size: 20px;
 }
  
 .login-container #login-button {
@@ -179,7 +291,7 @@ footer {
   bottom: 10px;
   text-align: center;
   width: 100%;
-  color: white;
+  color: EFEEF5;
 }
 
 /* ============= Animate Background ==============*/
