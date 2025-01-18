@@ -177,10 +177,10 @@ async function showResults() {
         resultGif = 'https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTdhYnFsNmphcXBocW8wZHFkcDR4MnNwZDQ5azA1aXNiOWE4YW92ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0MYt5jPR6QX5pnqM/giphy.gif';
     }
 
-    // Play the selected audio based on scores
-    // const resultAudio = new Audio(resultMusic);
-    // resultAudio.play();
-    // resultAudio.loop = true;
+    //Play the selected audio based on scores
+    const resultAudio = new Audio(resultMusic);
+    resultAudio.play();
+    resultAudio.loop = false;
 
     await updateLeaderboard(score);
 
