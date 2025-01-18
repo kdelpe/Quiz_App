@@ -10,14 +10,16 @@ app.use('/data',express.static(path.join(__dirname, "../data")));
 app.use('/images',express.static(path.join(__dirname, "../images")));
 
 const homeRoute = require('./routes/home');
-const quizRoute = require('./routes/quiz');
-const leaderboardRoute = require('./routes/leaderboard');
-const loginRoute = require('./routes/login');
 const signupRoute = require('./routes/signup');
+const loginRoute = require('./routes/login');
+const quizRoute = require('./routes/quiz');
+const profileRoute = require('./routes/profile');
+const leaderboardRoute = require('./routes/leaderboard');
 
 app.use('/', homeRoute);
 app.use('/signup', signupRoute);
 app.use('/login', loginRoute);
+app.use('/profile', profileRoute);
 app.use('/quiz', quizRoute);
 app.use('/leaderboard', leaderboardRoute);
 
