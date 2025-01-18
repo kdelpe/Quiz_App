@@ -482,6 +482,7 @@ body .text .letter.letter-2 {
   border-radius: 20px;
   padding: 10px;
   cursor:pointer;
+  z-index: 2;
   transition: .3s;
 }
 

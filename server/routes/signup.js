@@ -3,15 +3,12 @@ const router = express.Router();
 const fs = require('fs').promises;
 const path = require('path');
 
-// Middleware to parse JSON bodies
 router.use(express.json());
 
-// POST endpoint for user registration
 router.post('/', async (req, res) => {
     try {
         const { username, email, password } = req.body;
         
-        // Read current users
         const userDBPath = path.join(__dirname, '../../data/userDB.json');
         const data = await fs.readFile(userDBPath, 'utf8');
         const userDB = JSON.parse(data);
@@ -21,10 +18,8 @@ router.post('/', async (req, res) => {
             return res.status(400).json({ error: 'User already exists' });
         }
         
-        // Add new user
         userDB.users.push({ username, email, password });
         
-        // Save updated userDB
         await fs.writeFile(userDBPath, JSON.stringify(userDB, null, 4));
         
         // Create initial leaderboard entry with score 0
@@ -48,7 +43,6 @@ router.post('/', async (req, res) => {
     }
 });
 
-// GET endpoint to serve signup page
 router.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../../client/html/signup.html'));
 });
