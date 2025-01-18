@@ -5,6 +5,8 @@ let currentQuestion = 0;
 let score = 0;
 let timer;
 let timeLeft = 30;
+let isPaused = false; 
+let pausedTimeLeft = 30; 
 
 const questionEl = document.getElementById('question');
 const optionsEl = document.getElementById('options');
@@ -12,6 +14,10 @@ const nextBtn = document.getElementById('next-btn');
 const timerEl = document.getElementById('timer');
 const progressBar = document.querySelector('.progress-bar');
 const quizContainer = document.getElementById('quiz');
+const modal = document.getElementById('confirm-modal');
+const confirmEnd = document.getElementById('confirm-end');
+const cancelEnd = document.getElementById('cancel-end');
+const endQuizButton = document.getElementById('return-button');
   
 async function fetchQuizData() {
     try {
@@ -59,10 +65,10 @@ function selectOption(selectedButton, optionIndex) {
 }
   
 function startTimer() {
-    timerEl.textContent = `Time: ${timeLeft}s`;
+    timerEl.textContent = `Time: 00:${timeLeft}s`;
     timer = setInterval(() => {
         timeLeft--;
-        timerEl.textContent = `Time: ${timeLeft}s`;
+        timerEl.textContent = `Time: 00:${timeLeft}s`;
         if (timeLeft === 0) {
           clearInterval(timer);
           checkAnswer();
@@ -73,6 +79,25 @@ function startTimer() {
           } else {
             showResults();
           }
+        }
+    }, 1000);
+}
+
+function resumeTimer() {
+    timeLeft = pausedTimeLeft;
+    timerEl.textContent = `Time: 00:${timeLeft}s`;
+    timer = setInterval(() => {
+        timeLeft--;
+        timerEl.textContent = `Time: 00:${timeLeft}s`;
+        if (timeLeft === 0) {
+            clearInterval(timer);
+            checkAnswer();
+            currentQuestion++;
+            if (currentQuestion < quizData.length) {
+                loadQuestion();
+            } else {
+                showResults();
+            }
         }
     }, 1000);
 }
@@ -175,7 +200,42 @@ async function showResults() {
             </div>
         </div>
     `;
+    // Update the "End Quiz" button to "Home"
+    endQuizButton.textContent = "Home"; 
+    endQuizButton.removeEventListener('click', handleEndQuizClick); 
+    endQuizButton.addEventListener('click', () => {
+        window.location.href = '/client/html/home.html';
+    });
 }
+
+function handleEndQuizClick(event) {
+    event.preventDefault();
+    clearInterval(timer);
+    isPaused = true;
+    pausedTimeLeft = timeLeft;
+    modal.classList.remove('hidden');
+}
+
+endQuizButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    clearInterval(timer); 
+    isPaused = true;
+    pausedTimeLeft = timeLeft; 
+    modal.classList.remove('hidden'); 
+});
+
+confirmEnd.addEventListener('click', () => {
+    modal.classList.add('hidden'); 
+    showResults();
+});
+
+cancelEnd.addEventListener('click', () => {
+    modal.classList.add('hidden'); 
+    isPaused = false;
+    resumeTimer(); 
+});
+
+fetchQuizData();
   
 nextBtn.addEventListener('click', () => {
     clearInterval(timer);
@@ -188,4 +248,3 @@ nextBtn.addEventListener('click', () => {
     }
 });
   
-fetchQuizData();
