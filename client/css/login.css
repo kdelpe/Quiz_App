@@ -341,7 +341,7 @@ header {
 .text {
   font-family: "Liberty";
   font-weight: 100;
-  font-size: 6rem;
+  font-size: 5rem;
   letter-spacing: -0.25em;
   flex-flow: row;
 }
@@ -438,7 +438,7 @@ body .text .letter.letter-2 {
 
 /* =============== Login Container ================= */
 .login-container {
-  margin-top: 20%;
+  margin-top: 25%;
   text-align: center;
   color:  #EFEEF5;
 }
@@ -465,8 +465,8 @@ body .text .letter.letter-2 {
     text-align: center; 
     display: block;
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
+    padding: 20px 10px;
+    margin: 20px 0;
     box-sizing: border-box;
     font-size: 20px;
 }

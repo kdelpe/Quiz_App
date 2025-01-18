@@ -316,7 +316,7 @@ body {
   padding: 10px;
   border: 1px solid #EFEEF5;
   border-radius: 20px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background: #EFEEF5;
   margin-right: 120px;
   z-index: 10;
   position: relative;
