@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Liberty";
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/907368/liberty.otf");
+}
+
 body {
   font-family: 'Josefin Sans', sans-serif;
   box-sizing: border-box;
@@ -72,35 +77,130 @@ body {
 
   /* ================Header=================== */
   
-  header{
-    position: absolute;
-    top:0%;
-    left: 0%;
-    width:100%;
-    margin: 0;
-    padding: 0;
-    text-align: center;
+header{
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width:100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.text {
+  font-family: "Liberty";
+  font-weight: 100;
+  font-size: 6rem;
+  letter-spacing: -0.25em;
+  flex-flow: row;
+  margin-top: 10px;
+}
+
+.text .letter {
+  color: #d9fdff;
+  text-shadow: 0 0 2rem #00f0ff;
+  display: inline-block;
+}
+
+body .text .letter.letter-2 {
+  transform: translate(-0.2rem, 1rem) rotate(10deg);
+  -webkit-animation: flicker 2s ease-in-out infinite alternate;
+  animation: flicker 2s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes flicker {
+  0% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
   }
-  
-  h1 {
-    font-size: 3em;
-    color: white;
-    text-align: center;
-    margin-top: 15%;
+  5% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
   }
+  5.5% {
+    opacity: 0;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  6% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  6.5% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  7% {
+    opacity: 0;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  8% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(13deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  5% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  5.5% {
+    opacity: 0;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  6% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  6.5% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  7% {
+    opacity: 0;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  8% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(13deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+}
   
 /* ================Home Content Section=================== */
 .home-content{
   margin-top:25%;
   text-align: center;
   color:  #EFEEF5;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;  
 }
   
 .home-content #login-btn{
   width: 140px;
-  margin:20px 10px;
+  margin: 20px 10px;
   color: #591BC5;
-  font-size: 17px;
+  font-size: 20px;
   border:1px solid #EFEEF5;
   font-weight: 500;
   background: #EFEEF5;
@@ -115,9 +215,9 @@ body {
 
 .home-content #signup-btn{
   width: 140px;
-  margin:20px 10px;
+  margin: 20px 10px;
   color: #591BC5;
-  font-size: 17px;
+  font-size: 20px;
   border:1px solid #EFEEF5;
   font-weight: 500;
   background: #EFEEF5;
@@ -132,9 +232,9 @@ body {
 }
 .home-content #start-quiz-btn{
   width: 140px;
-  margin:20px 10px;
+  margin: 20px 10px;
   color: #591BC5;
-  font-size: 17px;
+  font-size: 20px;
   border:1px solid #EFEEF5;
   font-weight: 500;
   background: #EFEEF5;
@@ -150,9 +250,9 @@ body {
 
 .home-content #view-leaderboard-btn{
   width: 140px;
-  margin:20px 10px;
+  margin: 20px 10px;
   color: #591BC5;
-  font-size: 17px;
+  font-size: 20px;
   border:1px solid #EFEEF5;
   font-weight: 500;
   background: #EFEEF5;
@@ -172,7 +272,7 @@ footer {
   bottom: 10px;
   text-align: center;
   width: 100%;
-  color: #777;
+  color: #EFEEF5;
 }
 
   /* Animate Background*/
