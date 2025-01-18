@@ -28,36 +28,6 @@ document.addEventListener('DOMContentLoaded', function () {
     `;
   });
   
-  document.addEventListener('DOMContentLoaded', function () {
-    const currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
-    const username = currentUser ? currentUser.username : 'User';
-    const welcomeMessage = document.getElementById('username');
-  
-    // Function to generate alternating letter classes
-    function generateLetterSpans(text) {
-      return text
-        .split('')
-        .map((char, index) => {
-          const letterClass = index % 2 === 0 ? 'letter-1' : 'letter-2';
-          return `<span class="letter ${letterClass}">${char}</span>`;
-        })
-        .join('');
-    }
-  
-    // Populate welcome message
-    welcomeMessage.innerHTML = `
-      <span class="letter letter-1">H</span>
-      <span class="letter letter-2">E</span>
-      <span class="letter letter-2">L</span>
-      <span class="letter letter-1">L</span>
-      <span class="letter letter-1">O</span>
-      <span class="letter letter-2">,</span>
-      <br>
-      ${generateLetterSpans(username)}
-      <span class="letter letter-2">!</span>
-    `;
-  });
-  
   document.addEventListener('DOMContentLoaded', async () => {
     const usernameEl = document.getElementById('username');
     const statsBody = document.getElementById('stats-body');
