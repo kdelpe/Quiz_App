@@ -6,12 +6,51 @@
     <title>Profile</title>
     <link rel="stylesheet" href="/client/css/profile.css" />
   </head>
-  <body>
-    <header>
-      <h1>Hello World!</h1>
-    </header>
-    <main></main>
-    <footer></footer>
-    <script src="/client/js/profile.js"></script>
+  <body class="container-fluid">
+    <div class="background">
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <nav class="profile-nav">
+        <div class="profile-nav-left">
+          <img src="/images/logos/logo.png" alt="Logo" class="logo" />
+        </div>
+        <div class="profile-nav-right">
+          <button id="start-quiz-btn">Take Quiz</button>
+          <button id="leaderboard-btn">Leaderboard</button>
+          <button id="logout-btn">Log Out</button>
+        </div>
+      </nav>
+      <header class="profile-header">
+        <h1 class="text" id="username"></h1>
+      </header>
+      <div class="pyro">
+        <div class="before"></div>
+        <div class="after"></div>
+      </div>
+      <main class="profile-container">
+        <section class="stats-section">
+          <table class="stats-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Score</th>
+                <th>Ranking</th>
+              </tr>
+            </thead>
+            <tbody id="stats-body">
+              <!-- Stats will be dynamically populated -->
+            </tbody>
+          </table>
+        </section>
+      </main>
+      <footer>
+        <footer>
+          <p>&copy; 2025 Trivia Quiz</p>
+        </footer>
+      </footer>
+      <script src="/client/js/profile.js"></script>
+    </div>
   </body>
 </html>
