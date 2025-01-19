@@ -425,7 +425,8 @@ body .text .letter.letter-2 {
 }
 .home-content #login-btn:hover{
   border-radius: 20px;
-  background-color: #e1ff00;
+  background-color: #591BC5; 
+  color: white; 
 }
 
 .home-content #signup-btn{
@@ -445,7 +446,8 @@ body .text .letter.letter-2 {
 
 .home-content #signup-btn:hover{
   border-radius: 20px;
-  background-color: #e1ff00;
+  background-color: #591BC5; 
+  color: white; 
 }
 .home-content #start-quiz-btn{
   width: 200px;
@@ -464,7 +466,8 @@ body .text .letter.letter-2 {
 
 .home-content #start-quiz-btn:hover{
   border-radius: 20px;
-  background-color: #e1ff00;
+  background-color: #591BC5; 
+  color: white; 
 }
 
 .home-content #view-leaderboard-btn{
@@ -484,7 +487,8 @@ body .text .letter.letter-2 {
 
 .home-content #view-leaderboard-btn:hover{
   border-radius: 20px;
-  background-color: #e1ff00;
+  background-color: #591BC5; 
+  color: white; 
 }
 
 .container {
