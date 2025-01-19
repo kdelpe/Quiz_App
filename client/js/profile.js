@@ -36,14 +36,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   const logoutLink = document.getElementById('logout-link');
 
   if (!currentUser || !currentUser.username) {
-      alert('You are not logged in. Redirecting to login page...');
       window.location.href = '/login';
       return;
   }
 
   const username = currentUser.username;
 
-  // Fetch user stats
   async function fetchProfileData() {
       try {
           const response = await fetch(`/profile/data?username=${encodeURIComponent(username)}`);
@@ -60,7 +58,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   function populateStats(stats) {
-      if (stats.length === 0) {
+      statsBody.innerHTML = '';
+
+      if (!stats || stats.length === 0) {
           statsBody.innerHTML = `<tr><td colspan="3">No stats available</td></tr>`;
           return;
       }
@@ -76,19 +76,18 @@ document.addEventListener('DOMContentLoaded', async () => {
           .join('');
   }
 
-
   menuBtn.addEventListener('click', () => {
-    dropdownMenu.classList.toggle('hidden');
+      dropdownMenu.classList.toggle('hidden');
   });
 
   document.addEventListener('click', (event) => {
       if (!menuBtn.contains(event.target) && !dropdownMenu.contains(event.target)) {
-        dropdownMenu.classList.add('hidden');
+          dropdownMenu.classList.add('hidden');
       }
   });
 
   logoutLink.addEventListener('click', (event) => {
-    sessionStorage.removeItem('currentUser');
+      sessionStorage.removeItem('currentUser');
   });
 
   startQuizBtn.addEventListener('click', () => window.location.href = '/quiz');

@@ -38,7 +38,24 @@
         {
             "username": "codek4",
             "email": "codek4@codek4.com",
-            "password": "codek4"
+            "password": "codek4",
+            "stats": [
+                {
+                    "date": "2025-01-19",
+                    "score": 0,
+                    "rank": "9"
+                },
+                {
+                    "date": "2025-01-19",
+                    "score": 5,
+                    "rank": null
+                },
+                {
+                    "date": "2025-01-19",
+                    "score": 5,
+                    "rank": "5"
+                }
+            ]
         }
     ]
 }
