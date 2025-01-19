@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Liberty";
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/907368/liberty.otf");
+}
+
 body {
   min-height: 100vh;
   display: flex;
@@ -92,19 +97,43 @@ body {
   margin-left: 20px;
 }
 
-.navbar-right #return-button {
+/*
+ .navbar-right #return-button {
   text-decoration: none;
   color: #591BC5;
   font-size: 20px;
   font-weight: bold;
-  padding: 30px 30px;
+  padding: 20px 20px;
   border: 1px solid #EFEEF5;
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.8);
   margin-right: 100px;
   z-index: 10;
   position: relative;
+} */
+
+.navbar-right #return-button {
+  text-decoration: none;
+  background: #EFEEF5;
+  color: #591BC5;
+  font-size: 22px;
+  font-weight: 500;
+  font-family: 'Liberty';
+  padding: 20px;
+  border: 1px solid #000000;
+  border-radius: 20px;
+  margin-right: 100px;
+  z-index: 10;
+  position: relative;
+  transition: .3s;
 }
+
+.navbar-right #return-button:hover {
+  border-radius: 20px;
+  background-color: #591BC5; 
+  color: white; 
+}
+
 
 /* ============== Quiz Container ============ */
   
@@ -198,7 +227,7 @@ body {
 .results {
   text-align: center;
   position: relative;
-  padding-bottom: 20px; /* Add padding to the bottom */
+  padding-bottom: 20px;
   margin-bottom: 20px; 
 }
 
@@ -210,17 +239,21 @@ body {
 }
 
 .results .button-container .btn {
-  font-size: 17px; 
+  font-size: 20px; 
   padding: 15px 30px;
-  border-radius: 5px; 
+  border-radius: 20px; 
   color: #591BC5; 
-  border: 1px solid #EFEEF5;; 
+  border: 2px solid #dee2e6;
   cursor: pointer; 
   transition: background-color 0.3s ease; 
+  margin-bottom: 20px;
 }
 
 .results .button-container .btn:hover {
-  border-radius: 0; /* Change background color on hover */
+  border-radius: 20px;
+  background-color: #591BC5; 
+  color: white;
+  border: 2px solid #000000;
 }
 
 .result-icon {
@@ -240,13 +273,16 @@ body {
   font-size: 20px;
   font-weight: bold;
   cursor: pointer;
-  border:1px solid #EFEEF5;
+  border: 2px solid #dee2e6;
   border-radius: 20px;
   margin-top: 10px;
 }
 
 #next-btn:hover {
-  border-radius: 0;
+  border-radius: 20px;
+  background-color: #591BC5; 
+  color: white;
+  border: 2px solid #000000;
 }
 
 .result-gif {

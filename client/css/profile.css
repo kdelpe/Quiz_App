@@ -364,7 +364,7 @@ button, .dropdown a {
 }
 
 button:hover, .dropdown a:hover {
-  border-radius: 0;
+  border-radius: 20px;
   background-color: #591BC5;
   color: white;
 }
@@ -377,7 +377,7 @@ button:hover, .dropdown a:hover {
   background:-moz-repeating-radial-gradient(50% 50%, circle, #FFF, #FFF 5px, #591BC5 5px, #591BC5 10px);
   border: 1px solid #ddd;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+  border-radius: 20px;
   width: 200px;
   text-align: left;
   display: flex;
@@ -396,7 +396,7 @@ button:hover, .dropdown a:hover {
   font-size: 20px;
   font-family: 'Liberty';
   display: block;
-  border-radius: 10px;
+  border-radius: 20px;
   text-align: center;
   transition: background 0.3s, color 0.3s;
 }
