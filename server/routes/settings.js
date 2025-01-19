@@ -5,8 +5,32 @@ const router = express.Router();
 
 router.use(express.json());
 
-router.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../../client/html/settings.html'));
+// router.get('/', (req, res) => {
+//   res.sendFile(path.join(__dirname, '../../client/html/settings.html'));
+// });
+
+router.get('/get-profile', async (req, res) => {
+  try {
+    const username = req.query.username;
+
+    if (!username) {
+      return res.status(400).json({ error: 'Username is required.' });
+    }
+
+    const userDBPath = path.join(__dirname, '../../data/userDB.json');
+    const userDBData = await fs.readFile(userDBPath, 'utf8');
+    const userDB = JSON.parse(userDBData);
+
+    const user = userDB.users.find(user => user.username === username);
+    if (!user) {
+      return res.status(404).json({ error: 'User not found.' });
+    }
+
+    res.json({ username: user.username, email: user.email, password: user.password });
+  } catch (error) {
+    console.error('Error fetching profile data:', error);
+    res.status(500).json({ error: 'Internal server error.' });
+  }
 });
 
 const userDBPath = path.join(__dirname, '../../data/userDB.json');

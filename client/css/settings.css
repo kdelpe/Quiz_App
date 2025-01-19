@@ -231,3 +231,59 @@ body {
     100% { background-position: 0% 50%; }
   }
   
+  /* Modal Styling */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  color: #000;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.modal-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.confirm-save-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.confirm-save-btn:hover {
+  background-color: #218838;
+}
+
+.cancel-save-btn {
+  background-color: #6c757d;
+  color: white;
+}
+
+.cancel-save-btn:hover {
+  background-color: #5a6268;
+}
