@@ -292,82 +292,141 @@ body {
 /* =============== Header ==================== */
 
 .profile-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 40px;
-    background-color: transparent;
-    position: absolute;
-    width: 100%;
-    top: 3%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  background-color: transparent;
+  position: absolute;
+  width: 100%;
+  top: 3%;
+}
+
+.nav-list, .dropdown {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-list {
+  display: flex;
+  gap: 20px; 
+}
+
+.nav-list li {
+  display: inline-block;
+}
+
+.profile-nav-left .nav-list {
+  margin-left: 50px; 
+}
+
+.profile-nav-right .nav-list {
+  margin-right: 70px; 
+}
+
+.profile-nav-left #menu-btn {
+  text-decoration: none;
+  color: #591BC5;
+  font-size: 20px;
+  font-family: 'Liberty';
+  font-weight: 500;
+  padding: 20px;
+  border: 1px solid #000;
+  border-radius: 20px;
+  background: #FFF;
+  margin-left: 50px;
+  z-index: 10;
+  position: relative;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.profile-nav-left #menu-btn:hover {
+  background-color: #591BC5; 
+  color: white; 
+}
+
+button, .dropdown a {
+  text-decoration: none;
+  color: #591BC5;
+  font-size: 20px;
+  font-family: 'Liberty';
+  font-weight: 500;
+  padding: 20px;
+  border: 1px solid #000;
+  border-radius: 20px;
+  background: #FFF;
+  z-index: 10;
+  position: relative;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+button:hover, .dropdown a:hover {
+  border-radius: 0;
+  background-color: #591BC5;
+  color: white;
+}
+
+/* Dropdown styles */
+.dropdown {
+  position: absolute;
+  top: 65px; 
+  left: 50px; 
+  background:-moz-repeating-radial-gradient(50% 50%, circle, #FFF, #FFF 5px, #591BC5 5px, #591BC5 10px);
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  width: 200px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dropdown li {
+  padding: 20px;
+}
+
+.dropdown li a {
+  padding: 20px;
+  text-decoration: none;
+  color: #591BC5;
+  font-size: 20px;
+  font-family: 'Liberty';
+  display: block;
+  border-radius: 10px;
+  text-align: center;
+  transition: background 0.3s, color 0.3s;
+}
+
+.dropdown li a:hover {
+  background: #591BC5;
+  color: white;
+}
+
+.dropdown.hidden {
+  display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .nav-list {
+      display: none; 
   }
-  
-  .profile-nav-left .logo {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    margin-left: 30px;
+
+  .profile-nav {
+      flex-direction: column;
   }
 
-.profile-nav-right #start-quiz-btn {
-    text-decoration: none;
-    color: #591BC5;
-    font-family: 'Liberty';
-    font-size: 17px;
-    font-weight: bold;
-    padding: 10px;
-    border: 1px solid #000;
-    border-radius: 20px;
-    background: #FFF;
-    margin-right: 20px;
-    z-index: 10;
-    position: relative;
-    transition: .3s;
+  .dropdown {
+      left: auto;
+      right: 20px; 
+  }
 }
 
-.profile-nav-right #start-quiz-btn:hover {
-    border-radius: 0;
-}
-
-.profile-nav-right #leaderboard-btn {
-    text-decoration: none;
-    color: #591BC5;
-    font-size: 17px;
-    font-family: 'Liberty';
-    font-weight: 500;
-    padding: 10px;
-    border: 1px solid #000;
-    border-radius: 20px;
-    background: #FFF;
-    margin-right: 20px;
-    z-index: 10;
-    position: relative;
-    transition: .3s;
-}
-
-.profile-nav-right #leaderboard-btn:hover {
-    border-radius: 0;
-}
-
-.profile-nav-right #logout-btn {
-    text-decoration: none;
-    color: #591BC5;
-    font-size: 17px;
-    font-family: 'Liberty';
-    font-weight: 500;
-    padding: 10px;
-    border: 1px solid #000;
-    border-radius: 20px;
-    background: #FFF;
-    margin-right: 50px;
-    z-index: 10;
-    position: relative;
-    transition: .3s;
-}
-
-.profile-nav-right #logout-btn:hover {
-    border-radius: 0;
-}
+/** =============== Header ==================== */
 
 header {
     position: absolute;

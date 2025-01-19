@@ -25,70 +25,15 @@ document.addEventListener('DOMContentLoaded', function () {
     <span class="letter letter-1">&ensp;!</span>
   `;
 });
-  
-// document.addEventListener('DOMContentLoaded', async () => {
-//   const logoutBtn = document.getElementById('logout-btn');
-//   const startQuizBtn = document.getElementById('start-quiz-btn');
-//   const leaderboardBtn = document.getElementById('leaderboard-btn');
-
-//   async function fetchProfileData() {
-//     try {
-//       const currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
-//       const username = currentUser ? currentUser.username : null;
-//       if (!username) {
-//           alert('User not logged in.');
-//           return;
-//       }
-
-//       const response = await fetch(`/profile/data?username=${encodeURIComponent(username)}`);
-//       const data = await response.json();
-
-//       if (response.ok) {
-//         // Update the welcome message
-//         // const welcomeMessage = document.getElementById('username');
-//         // welcomeMessage.textContent = `Welcome, ${data.username}!`;
-
-//         // Populate the stats table
-//         const statsBody = document.getElementById('stats-body');
-//         statsBody.innerHTML = ''; // Clear previous entries
-//         data.stats.forEach(stat => {
-//           const row = document.createElement('tr');
-//           row.innerHTML = `
-//             <td>${stat.date}</td>
-//             <td>${stat.score}</td>
-//             <td>${stat.rank}</td>
-//           `;
-//           statsBody.appendChild(row);
-//         });
-//       } else {
-//         alert(data.error || 'Failed to load profile data.');
-//       }
-//     } catch (error) {
-//       console.error('Error loading profile stats:', error);
-//     }
-//   }
-
-//   // Logout functionality
-//   logoutBtn.addEventListener('click', () => {
-//     sessionStorage.removeItem('currentUser');
-//     window.location.href = '/logout';
-//   });
-
-//   // Navigation buttons
-//   startQuizBtn.addEventListener('click', () => window.location.href = '/quiz');
-//   leaderboardBtn.addEventListener('click', () => window.location.href = '/leaderboard');
-
-//   // Fetch and display data
-//   fetchProfileData();
-// });
 
 document.addEventListener('DOMContentLoaded', async () => {
   const currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
-  const usernameEl = document.getElementById('username');
   const statsBody = document.getElementById('stats-body');
-  const logoutBtn = document.getElementById('logout-btn');
+  const menuBtn = document.getElementById('menu-btn');
   const startQuizBtn = document.getElementById('start-quiz-btn');
   const leaderboardBtn = document.getElementById('leaderboard-btn');
+  const dropdownMenu = document.getElementById('dropdown-menu');
+  const logoutLink = document.getElementById('logout-link');
 
   if (!currentUser || !currentUser.username) {
       alert('You are not logged in. Redirecting to login page...');
@@ -132,9 +77,18 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
 
-  logoutBtn.addEventListener('click', () => {
-      sessionStorage.removeItem('currentUser');
-      window.location.href = '/login';
+  menuBtn.addEventListener('click', () => {
+    dropdownMenu.classList.toggle('hidden');
+  });
+
+  document.addEventListener('click', (event) => {
+      if (!menuBtn.contains(event.target) && !dropdownMenu.contains(event.target)) {
+        dropdownMenu.classList.add('hidden');
+      }
+  });
+
+  logoutLink.addEventListener('click', (event) => {
+    sessionStorage.removeItem('currentUser');
   });
 
   startQuizBtn.addEventListener('click', () => window.location.href = '/quiz');
