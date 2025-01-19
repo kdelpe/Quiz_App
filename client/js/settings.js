@@ -1,86 +1,81 @@
 document.addEventListener('DOMContentLoaded', () => {
   const editProfileForm = document.getElementById('edit-profile-form');
-  const usernameInput = document.getElementById('username');
-  const emailInput = document.getElementById('email');
-  const passwordInput = document.getElementById('password');
-
+  const modal = document.getElementById('save-changes-modal');
+  const confirmSaveBtn = document.getElementById('confirm-save-btn');
+  const cancelSaveBtn = document.getElementById('cancel-save-btn');
+  const backButton = document.getElementById('home-btn');
   const currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
-  if (currentUser) {
-    usernameInput.value = currentUser.username;
-    emailInput.value = currentUser.email;
+  const usernameField = document.getElementById('username');
+  const emailField = document.getElementById('email');
+
+  if (!currentUser) {
+    alert('You are not logged in. Redirecting to login page...');
+    window.location.href = '/login';
+    return;
   }
 
-  editProfileForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
+  async function fetchUserProfile() {
+    try {
+      const response = await fetch(`/settings/get-profile?username=${encodeURIComponent(currentUser.username)}`);
+      if (!response.ok) {
+        throw new Error('Failed to fetch profile data');
+      }
 
-    const updatedData = {
-      currentUsername: currentUser.username,
-      username: usernameInput.value,
-      email: emailInput.value,
-      password: passwordInput.value,
-    };
+      const data = await response.json();
+      usernameField.value = data.username;
+      emailField.value = data.email;
+    } catch (error) {
+      console.error('Error fetching profile data:', error);
+      alert('Failed to load profile data.');
+    }
+  }
+
+  fetchUserProfile();
+
+
+  editProfileForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    modal.classList.remove('hidden');
+  });
+
+  confirmSaveBtn.addEventListener('click', async () => {
+    const username = document.getElementById('username').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value.trim();
+
+    if (!username || !email || !password) {
+      alert('All fields are required.');
+      return;
+    }
 
     try {
       const response = await fetch('/settings/update-profile', {
         method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(updatedData),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ currentUsername: currentUser.username, username, email, password }),
       });
 
       const result = await response.json();
 
       if (response.ok) {
-        alert(result.message);
-        sessionStorage.setItem('currentUser', JSON.stringify({ username: updatedData.username, email: updatedData.email }));
+        alert('Profile updated successfully!');
+        sessionStorage.setItem('currentUser', JSON.stringify({ username, email }));
         window.location.href = '/profile';
       } else {
-        alert(result.error);
+        alert(result.error || 'Failed to update profile.');
       }
     } catch (error) {
       console.error('Error updating profile:', error);
       alert('An error occurred while updating your profile.');
     }
   });
-});
 
+  cancelSaveBtn.addEventListener('click', () => {
+    modal.classList.add('hidden');
+  });
 
-// document.addEventListener('DOMContentLoaded', () => {
-//     const deactivateBtn = document.getElementById('deactivate-btn');
-//     const modal = document.getElementById('deactivate-modal');
-//     const confirmDeactivateBtn = document.getElementById('confirm-deactivate-btn');
-//     const cancelDeactivateModalBtn = document.getElementById('cancel-deactivate-modal-btn');
-  
-//     // Show modal on "Deactivate Account" button click
-//     deactivateBtn.addEventListener('click', () => {
-//       modal.classList.remove('hidden');
-//     });
-  
-//     // Confirm deactivation
-//     confirmDeactivateBtn.addEventListener('click', () => {
-//       fetch('/profile/delete', {
-//         method: 'DELETE',
-//       })
-//         .then(response => response.json())
-//         .then(data => {
-//           alert(data.message || 'Account deactivated successfully');
-//           window.location.href = '/logout';
-//         })
-//         .catch(error => console.error('Error deactivating account:', error));
-//     });
-  
-//     // Cancel deactivation and close modal
-//     cancelDeactivateModalBtn.addEventListener('click', () => {
-//       modal.classList.add('hidden');
-//     });
-//   });
-
-document.addEventListener('DOMContentLoaded', () => {
-  const homeBtn = document.getElementById('home-btn');
-
-  homeBtn.addEventListener('click', () => {
+    // Back button functionality
+  backButton.addEventListener('click', () => {
     window.location.href = '/profile';
   });
 });
-  
