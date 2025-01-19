@@ -16,6 +16,14 @@
       <div class="cube"></div>
       <div class="cube"></div>
       <div class="cube"></div>
+      <nav class="navbar">
+        <div class="navbar-left">
+          <img src="/images/logos/logo.png" alt="Logo" class="logo" />
+        </div>
+        <div class="navbar-right">
+          <a href="/client/html/home.html" id="return-button">End Quiz</a>
+        </div>
+      </nav>
       <div class="quiz-container" id="quiz">
         <div class="quiz-header">
           <h1>Trivia Quiz</h1>
@@ -37,6 +45,15 @@
         <div class="quiz-footer">
           <div class="timer" id="timer">Time: 30s</div>
           <button class="btn btn-primary" id="next-btn">Next</button>
+        </div>
+      </div>
+      <div id="confirm-modal" class="modal hidden">
+        <div class="modal-content">
+          <p>Are you sure you want to end the quiz and view your results?</p>
+          <div class="modal-buttons">
+            <button id="confirm-end" class="btn btn-danger">Yes</button>
+            <button id="cancel-end" class="btn btn-secondary">Cancel</button>
+          </div>
         </div>
       </div>
       <audio

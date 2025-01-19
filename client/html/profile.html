@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <link rel="stylesheet" href="/client/css/profile.css" />
+  </head>
+  <body class="container-fluid">
+    <div class="background">
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <nav class="profile-nav">
+        <div class="profile-nav-left">
+          <button id="menu-btn" class="dropdown-btn">Menu</button>
+          <ul id="dropdown-menu" class="dropdown hidden">
+            <li><a href="/client/html/settings.html">Settings</a></li>
+            <li><a id="logout-link" href="/client/html/login.html">Log Out</a></li>
+          </ul>
+        </div>
+        <div class="profile-nav-right">
+          <ul class="nav-list">
+            <li><button id="start-quiz-btn">Play Trivia</button></li>
+            <li><button id="leaderboard-btn">Leaderboard</button></li>
+          </ul>
+        </div>
+      </nav>
+      <header class="profile-header">
+        <h1 class="text" id="username"></h1>
+      </header>
+      <div class="pyro">
+        <div class="before"></div>
+        <div class="after"></div>
+      </div>
+      <main class="profile-container">
+        <section class="stats-section">
+          <table class="stats-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Score</th>
+                <th>Ranking</th>
+              </tr>
+            </thead>
+            <tbody id="stats-body">
+              <!-- Stats will be dynamically populated -->
+            </tbody>
+          </table>
+        </section>
+      </main>
+      <footer>
+        <footer>
+          <p>&copy; 2025 Trivia Quiz</p>
+        </footer>
+      </footer>
+      <script src="/client/js/profile.js"></script>
+    </div>
+  </body>
+</html>

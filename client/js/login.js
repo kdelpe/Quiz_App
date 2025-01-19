@@ -1,3 +1,4 @@
+
 document.getElementById('login-button').addEventListener('click', async function() {
     const username = document.querySelector('input[type="text"]').value;
     const password = document.querySelector('input[type="password"]').value;
@@ -19,10 +20,10 @@ document.getElementById('login-button').addEventListener('click', async function
         const data = await response.json();
         
         if (response.ok) {
-            // Store user info in session storage
             sessionStorage.setItem('currentUser', JSON.stringify(data.user));
-            alert('Login successful!');
-            window.location.href = '/';
+            setTimeout(() => {
+                window.location.href = '/profile';
+            }, 500);
         } else {
             alert(data.error || 'Invalid username or password');
         }
@@ -31,4 +32,6 @@ document.getElementById('login-button').addEventListener('click', async function
         alert('An error occurred during login');
     }
 });
+
+
 

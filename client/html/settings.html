@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings</title>
+    <link rel="stylesheet" href="/client/css/settings.css" />
+  </head>
+  <body>
+    <div class="background">
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+    </div>
+
+    <!-- Home Button -->
+    <div class="home-btn-container">
+      <button id="home-btn" class="home-btn">Back</button>
+    </div>
+
+    <div class="settings-container">
+      <h2>Edit Profile</h2>
+
+      <!-- Edit Profile Section -->
+      <div class="form-section">
+        <form id="edit-profile-form">
+          <label for="username">Username</label>
+          <input
+            type="text"
+            id="username"
+            placeholder="Enter new username"
+            required
+          />
+
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter new email"
+            required
+          />
+
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter new password"
+            required
+          />
+
+          <button type="submit" class="save-btn">Save Changes</button>
+        </form>
+      </div>
+
+      <!-- Modal for Confirming Save Changes -->
+      <div id="save-changes-modal" class="modal hidden">
+        <div class="modal-content">
+          <h3>Confirm Changes</h3>
+          <p>Are you sure you want to save these changes?</p>
+          <div class="modal-buttons">
+            <button id="confirm-save-btn" class="confirm-save-btn">
+              Yes, Save
+            </button>
+            <button id="cancel-save-btn" class="cancel-save-btn">Cancel</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Deactivate Account Section -->
+      <div class="deactivate-section">
+        <h3>Deactivate Account</h3>
+        <p>This will permanently remove your account and data.</p>
+        <button id="deactivate-btn" class="deactivate-btn">
+          Deactivate Account
+        </button>
+      </div>
+    </div>
+
+    <!-- Modal for Confirming Deactivation -->
+    <div id="deactivate-modal" class="modal hidden">
+      <div class="modal-content">
+        <h3>Confirm Deactivation</h3>
+        <p>
+          Are you sure you want to deactivate your account? This action cannot
+          be undone.
+        </p>
+        <div class="modal-buttons">
+          <button id="confirm-deactivate-btn" class="confirm-deactivate-btn">
+            Yes, Deactivate
+          </button>
+          <button
+            id="cancel-deactivate-modal-btn"
+            class="cancel-deactivate-modal-btn"
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="/client/js/settings.js"></script>
+  </body>
+</html>

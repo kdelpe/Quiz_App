@@ -12,13 +12,38 @@
       <div class="cube"></div>
       <div class="cube"></div>
       <div class="cube"></div>
+      <nav class="navbar">
+        <div class="navbar-left">
+          <img src="/images/logos/logo.png" alt="Logo" class="logo" />
+        </div>
+        <div class="navbar-right">
+          <a href="/client/html/home.html" id="return-button">Home</a>
+        </div>
+      </nav>
       <header>
-        <h1>Welcome</h1>
+        <h1 class="text">
+          <span class="letter letter-1">W</span>
+          <span class="letter letter-2">E</span>
+          <span class="letter letter-1">L</span>
+          <span class="letter letter-2">C</span>
+          <span class="letter letter-1">O</span>
+          <span class="letter letter-2">M</span>
+          <span class="letter letter-2">E</span>
+          <br>
+          <span class="letter letter-1">B</span>
+          <span class="letter letter-2">A</span>
+          <span class="letter letter-1">C</span>
+          <span class="letter letter-2">K</span>
+        </h1>
       </header>
+      <div class="pyro">
+        <div class="before"></div>
+        <div class="after"></div>
+      </div>
       <main class="login-container">
         <form method="GET" action="/" class="login-form">
-          <input type="text" placeholder="Username" />
-          <input type="password" placeholder="Password" />
+          <input type="text" placeholder="Enter Your Username" required />
+          <input type="password" placeholder="Enter Your Password" required />
           <input id="login-button" type="button" value="Log in" />
           <a href="/client/html/signup.html">Don't have an account? Register</a>
         </form>

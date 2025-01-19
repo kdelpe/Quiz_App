@@ -19,7 +19,6 @@ document.getElementById('signup-button').addEventListener('click', async functio
             return;
         }
 
-        // Add new user
         data.users.push({
             username,
             email,
@@ -35,8 +34,9 @@ document.getElementById('signup-button').addEventListener('click', async functio
             body: JSON.stringify({ username, email, password })
         });
 
-        alert('Signup successful!');
-        window.location.href = '/client/html/login.html';
+        setTimeout(() => {
+            window.location.href = '/profile';
+        }, 500);
     } catch (error) {
         console.error('Error:', error);
         alert('An error occurred during signup');
