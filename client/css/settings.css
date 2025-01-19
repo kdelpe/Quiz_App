@@ -57,6 +57,10 @@ body {
   }
   
   /* Form Section Styling */
+  #edit-profile-form {
+    width: 250px;
+  }
+
   .form-section form {
     display: flex;
     flex-direction: column;
@@ -86,6 +90,9 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    width: 150px;
+    text-align: center;
+    margin-left: 71px;
   }
   
   .save-btn:hover {
@@ -156,6 +163,8 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-left: auto;
+    margin-right: 10px;
   }
   
   .confirm-deactivate-btn:hover {
@@ -169,6 +178,7 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-right: auto;
   }
   
   .cancel-deactivate-modal-btn:hover {
