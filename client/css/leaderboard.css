@@ -1,88 +1,208 @@
-@font-face {
-    font-family: "Liberty";
-    src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/907368/liberty.otf");
-  }
-
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    background: linear-gradient(to right, #c94b4b, #4b134f);
+    font-family: 'Josefin Sans', sans-serif;
+    min-height: 100vh;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Animated Background */
+.background {
+    background: linear-gradient(132deg, #FC415A, #591BC5, #212335);
+    background-size: 400% 400%;
+    animation: Gradient 15s ease infinite;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    font-family: 'Josefin Sans', sans-serif;
 }
 
-/* Leaderboard Box */
 .section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    z-index: 1;
 }
 
 .leaderboard-container {
-    background-color: white;
-    max-width: 400px;
-    width: 400px;
-    display: flex;
-    flex-direction: column;
+    background: #591BC5;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 .heading {
-    border: solid black;
-    display: flex; 
+    border: none;
+    display: flex;
     justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 0 10px;
+}
+
+.heading h1 {
+    font-size: 24px;
+    font-weight: 600;
 }
 
 .score-table {
-    width: 400px;
+    width: 100%;
 }
 
-.score-table table{
-    border: solid black 1px;
-    border-collapse: collapse;
-    width: 400px;
-    text-align: center;
+.score-table table {
+    width: 100%;
+    border: none;
+    border-collapse: separate;
+    border-spacing: 0 8px;
 }
 
 .score-table th {
-    border: solid black 1px;
+    border: none;
+    color: #fff;
+    font-weight: 500;
+    padding: 10px;
+    text-align: center;
+    width: 33.33%;
 }
 
 .score-table td {
-    border-right: solid black 1px;
-    border-bottom: solid black 1px;
+    border: none;
+    padding: 15px;
+    background: #6d2ee1;
+    color: white;
+    text-align: center;
+}
+
+.score-table tr td:first-child {
+    border-radius: 10px 0 0 10px;
+    font-weight: bold;
+}
+
+.score-table tr td:last-child {
+    border-radius: 0 10px 10px 0;
+}
+
+/* Ranking Colors */
+.score-table tr:nth-child(1) td {
+    background: #eac240;
+}
+
+.score-table tr:nth-child(2) td {
+    background: #aaa9ad;
+}
+
+.score-table tr:nth-child(3) td {
+    background: #CD7F32;
 }
 
 .container {
     margin-top: 20px;
     display: flex;
-  }
+    justify-content: center;
+}
 
 .container button {
-    margin: 10px;
-    padding: 10px 20px;
-    font-size: 1.2em;
-    color: #420e1a;
-    background-color: rgb(255, 255, 255);
+    padding: 12px 30px;
+    font-size: 16px;
+    color: white;
+    background-color: #591BC5;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: #c94b4b;
+.container button:hover {
+    background-color: #6d2ee1;
 }
 
-/* ================Footer=================== */
 footer {
-    position: absolute;
+    position: fixed;
     bottom: 10px;
     text-align: center;
     width: 100%;
-    color: #EFEEF5;
-  }
+    color: #fff;
+    z-index: 1;
+}
+
+/* Cube Animation */
+.cube {
+    position: absolute;
+    top: 80vh;
+    left: 45vw;
+    width: 10px;
+    height: 10px;
+    border: solid 1px #D7D4E4;
+    transform-origin: top left;
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    animation: cube 12s ease-in forwards infinite;
+}
+
+.cube:nth-child(2n) {
+    border-color: #FFF;
+}
+
+.cube:nth-child(2) {
+    animation-delay: 2s;
+    left: 25vw;
+    top: 40vh;
+}
+
+.cube:nth-child(3) {
+    animation-delay: 4s;
+    left: 75vw;
+    top: 50vh;
+}
+
+.cube:nth-child(4) {
+    animation-delay: 6s;
+    left: 90vw;
+    top: 10vh;
+}
+
+.cube:nth-child(5) {
+    animation-delay: 8s;
+    left: 10vw;
+    top: 85vh;
+}
+
+.cube:nth-child(6) {
+    animation-delay: 10s;
+    left: 50vw;
+    top: 10vh;
+}
+
+/* Animations */
+@keyframes Gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes cube {
+    from {
+        transform: scale(0) rotate(0deg) translate(-50%, -50%);
+        opacity: 1;
+    }
+    to {
+        transform: scale(20) rotate(960deg) translate(-50%, -50%);
+        opacity: 0;
+    }
+}
