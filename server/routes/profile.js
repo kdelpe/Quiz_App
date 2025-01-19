@@ -21,7 +21,6 @@ router.get('/data', async (req, res) => {
       const userDBData = await fs.readFile(userDBPath, 'utf8');
       const userDB = JSON.parse(userDBData);
 
-      // Find the user
       const user = userDB.users.find((user) => user.username === username);
 
       if (!user) {

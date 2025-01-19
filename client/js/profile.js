@@ -36,7 +36,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   const logoutLink = document.getElementById('logout-link');
 
   if (!currentUser || !currentUser.username) {
-      alert('You are not logged in. Redirecting to login page...');
       window.location.href = '/login';
       return;
   }
