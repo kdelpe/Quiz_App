@@ -79,3 +79,51 @@ document.addEventListener('DOMContentLoaded', () => {
     window.location.href = '/profile';
   });
 });
+
+//DELETE USER
+document.addEventListener('DOMContentLoaded', () => {
+  const deactivateBtn = document.getElementById('deactivate-btn');
+  const confirmDeactivateBtn = document.getElementById('confirm-deactivate-btn');
+  const cancelDeactivateModalBtn = document.getElementById('cancel-deactivate-modal-btn');
+  const deactivateModal = document.getElementById('deactivate-modal');
+
+  const currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+
+  if (!currentUser) {
+    alert('You are not logged in. Redirecting to login page...');
+    window.location.href = '/login';
+    return;
+  }
+
+  deactivateBtn.addEventListener('click', () => {
+    deactivateModal.classList.remove('hidden');
+  });
+
+  cancelDeactivateModalBtn.addEventListener('click', () => {
+    deactivateModal.classList.add('hidden');
+  });
+
+  confirmDeactivateBtn.addEventListener('click', async () => {
+    try {
+      const response = await fetch('/settings/delete-user', {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username: currentUser.username }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        alert('Account deactivated successfully.');
+        sessionStorage.removeItem('currentUser');
+        window.location.href = '/login';
+      } else {
+        alert(result.error || 'Failed to deactivate account.');
+      }
+    } catch (error) {
+      console.error('Error deactivating account:', error);
+      alert('An error occurred while deactivating your account.');
+    }
+  });
+});
+
