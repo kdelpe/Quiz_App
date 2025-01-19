@@ -96,9 +96,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       return;
   }
 
-  // Display welcome message
   const username = currentUser.username;
-  //usernameEl.textContent = `Hello, ${username}!`;
 
   // Fetch user stats
   async function fetchProfileData() {
@@ -116,7 +114,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
   }
 
-  // Populate the stats table
   function populateStats(stats) {
       if (stats.length === 0) {
           statsBody.innerHTML = `<tr><td colspan="3">No stats available</td></tr>`;
@@ -134,16 +131,14 @@ document.addEventListener('DOMContentLoaded', async () => {
           .join('');
   }
 
-  // Logout functionality
+
   logoutBtn.addEventListener('click', () => {
       sessionStorage.removeItem('currentUser');
       window.location.href = '/login';
   });
 
-  // Navigation buttons
   startQuizBtn.addEventListener('click', () => window.location.href = '/quiz');
   leaderboardBtn.addEventListener('click', () => window.location.href = '/leaderboard');
 
-  // Fetch profile data on page load
   fetchProfileData();
 });
