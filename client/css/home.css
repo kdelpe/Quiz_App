@@ -414,8 +414,9 @@ body .text .letter.letter-2 {
   margin: 20px 10px;
   color: #591BC5;
   font-size: 20px;
-  border:1px solid #EFEEF5;
   font-weight: 500;
+  font-family: 'Liberty';
+  border:1px solid #EFEEF5;
   background: #EFEEF5;
   border-radius: 20px;
   padding: 10px;
@@ -427,12 +428,13 @@ body .text .letter.letter-2 {
 }
 
 .home-content #signup-btn{
-  width: 140px;
+  width: 200px;
   margin: 20px 10px;
   color: #591BC5;
   font-size: 20px;
-  border:1px solid #EFEEF5;
   font-weight: 500;
+  font-family: 'Liberty';
+  border:1px solid #EFEEF5;
   background: #EFEEF5;
   border-radius: 20px;
   padding: 10px;
@@ -444,12 +446,13 @@ body .text .letter.letter-2 {
   border-radius: 0;
 }
 .home-content #start-quiz-btn{
-  width: 140px;
+  width: 200px;
   margin: 20px 10px;
   color: #591BC5;
   font-size: 20px;
-  border:1px solid #EFEEF5;
   font-weight: 500;
+  font-family: 'Liberty';
+  border:1px solid #EFEEF5;
   background: #EFEEF5;
   border-radius: 20px;
   padding: 10px;
@@ -462,15 +465,16 @@ body .text .letter.letter-2 {
 }
 
 .home-content #view-leaderboard-btn{
-  width: 140px;
+  width: 200px;
   margin: 20px 10px;
   color: #591BC5;
   font-size: 20px;
-  border:1px solid #EFEEF5;
   font-weight: 500;
+  font-family: 'Liberty';
+  border:1px solid #EFEEF5;
   background: #EFEEF5;
   border-radius: 20px;
-  padding: 10px;
+  padding: 20px;
   cursor:pointer;
   transition: .3s;
 }
