@@ -10,35 +10,38 @@
 ---
 
 ## Overview
-Trivia Quiz is a simple yet dynamic application where users can test their knowledge through a 10-question quiz. The app comprises three main pages:
-1. **Home Page**: Allows users to start the quiz.
-2. **Quiz Page**: Displays the quiz questions with answer options.
-3. **Results Page**: Shows the user’s score after completing the quiz.
+Trivia Quiz is a simple yet dynamic application where users can test their knowledge through a 10-question quiz. The app comprises five main pages:
+1. **Welcome Page**: Allows users to start the quiz.
+2. **Profile Page**: Displays user information, navigation options, and stats.
+3. **Quiz Page**: Displays the quiz questions with answer options, navigation bar, 30sec timer, background music.
+4. **Results Page**: Shows the user’s score after completing the quiz, gif, music based on score ranges.
+5. **Settings Page**: Allows users to update their account settings or deactivate their account.
+6. **Leaderboard Page**: Displays the 10 top players and their scores by date.
 
 This application uses client-server architecture. The server handles question selection, scoring, and serves the HTML, CSS, and JS files.
 
 ---
 
 ## Features
-- **Core Features**:
-  - Randomized question selection from a JSON file.
-  - Questions do not repeat for the same session (or with minimal repetition).
-  - Score tracking and display.
-  - Restart quiz functionality.
+### Core Features
+- Randomized question selection from a JSON file.
+- Questions do not repeat for the same session.
+- Tracks and displays user scores and rankings.
+- Option to restart the quiz after completion.
 
-- **Extra Features**:
-  - [ ] Timer for the quiz/questions.
-  - [ ] Leaderboard.
-  - [ ] Login/signup page.
-  - [ ] User choice for the number of quiz questions.
-  - [ ] Additional features (if any).
+### Extra Features
+- Timer for the quiz/questions.
+- Leaderboard displaying top scores and player rankings.
+- Login/signup functionality.
+- Settings page to update account details or deactivate the account.
+- Animated fireworks for celebrations and interactive design elements.
 
 ---
 
 ## Team Members and Roles
-- **Kervens Delpe**: Team Leader, [e.g., server setup, backend logic, Testing, Debugging].
-- **Angel Difo**: [e.g., Frontend development, CSS styling, Testing, Debugging].
-- **Michael Esteban**: [e.g., Frontend development, CSS styling, Testing, Debugging].
+- **Kervens Delpe**: Team Leader, server setup, backend logic for quiz & timer, Debugging.
+- **Angel Difo**: DB (json file) setup, Frontend development, CSS styling.
+- **Michael Esteban**: Frontend development & CSS styling Home Page, Login, Results, Settings, Debugging
 
 ---
 
@@ -63,6 +66,53 @@ This application uses client-server architecture. The server handles question se
    ```
 5. Open the client in your browser:
    - Visit `http://localhost:[PORT]` 
+
+6. Data setup:
+   - Ensure the following JSON files are in place for proper functionality:
+      - `data/userDB.json`: This file is used for storing user data, including usernames, emails, stats, and rankings.
+      - **Format Example**
+      ```json
+      {
+         "users": 
+         [
+            {
+               "username": "testUser",
+               "email": "testuser@example.com",
+               "password": "hashed_password_here",
+               "stats": [
+                  { "date": "2025-01-01", "score": 80, "rank": 1 },
+                  { "date": "2025-01-15", "score": 95, "rank": 1 }
+               ]
+            }
+         ]
+      }
+      ```
+      - `data/questions.json`: This file should contain all the quiz questions in a structured format.
+      - **Format Example**
+      ```json
+      [
+         {
+            "question": "A flashing red traffic light signifies that a driver should do what?",
+            "options": [
+               "stop",
+               "speed up",
+               "proceed with caution",
+               "honk the horn"
+            ],
+            "correct": 0
+         },
+         {
+            "question": "A knish is traditionally stuffed with what filling?",
+            "options": [
+               "potato",
+               "creamed corn",
+               "lemon custard",
+               "raspberry jelly"
+            ],
+            "correct": 0
+         },
+      ]
+      ```
 
 ---
 
