@@ -87,7 +87,7 @@ This application uses client-server architecture. The server handles question se
          ]
       }
       ```
-      - `data/questions.json`: This file should contain all the quiz questions in a structured format.
+      - `data/questions.json`: This file should contain all the quiz questions in a structured format with the `"correct"` field taking the index of the array.
       - **Format Example**
       ```json
       [
