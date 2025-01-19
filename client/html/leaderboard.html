@@ -4,84 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leaderboard</title>
-    <link rel = "stylesheet" href = "/client/css/leaderboard.css">
+    <link rel="stylesheet" href="/client/css/leaderboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!--- Main --->
-    <main>
-        <div class = "section">
-            <!--- Leaderboard Box --->
-        <div class = "leaderboard-container">
-            <div class = "heading">
-                <h1> Leaderboard </h1>
-            </div>
-            <div class = "score-table">
-                <table>
-                    <thead>
-                        <tr>
-                            <th> Rank </th>
-                            <th> User </th>
-                            <th> Score </th>
-                        </tr> 
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td> 1 </td>
-                            <td> Michael </td>
-                            <td> 10 </td>
-                        </tr>
-                        <tr>
-                            <td> 1 </td>
-                            <td> Michael </td>
-                            <td> 10 </td>
-                        </tr><tr>
-                            <td> 1 </td>
-                            <td> Michael </td>
-                            <td> 10 </td>
-                        </tr><tr>
-                            <td> 1 </td>
-                            <td> Michael </td>
-                            <td> 10 </td>
-                        </tr><tr>
-                            <td> 1 </td>
-                            <td> Michael </td>
-                            <td> 10 </td>
-                        </tr><tr>
-                            <td> 1 </td>
-                            <td> Michael </td>
-                            <td> 10 </td>
-                        </tr><tr>
-                            <td> 1 </td>
-                            <td> Michael </td>
-                            <td> 10 </td>
-                        </tr><tr>
-                            <td> 1 </td>
-                            <td> Michael </td>
-                            <td> 10 </td>
-                        </tr><tr>
-                            <td> 1 </td>
-                            <td> Michael </td>
-                            <td> 10 </td>
-                        </tr><tr>
-                            <td> 1 </td>
-                            <td> Michael </td>
-                            <td> 10 </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+    <div class="background">
+        <!-- Animated cubes -->
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        
+        <main>
+            <div class="section">
+                <div class="leaderboard-container">
+                    <div class="heading">
+                        <h1>Leaderboard</h1>
+                    </div>
+                    <div class="score-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Player</th>
+                                    <th>Score</th>
+                                </tr> 
+                            </thead>
+                            <tbody>
+                                <!-- Data will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
 
-        <!---- Home Button --->
-        <div class = "container">
-            <button id="home-btn">Home</button>
-        </div>
-        </div>
-    </main>
-    <!--- Footer --->
-    <footer>
-        <p>&copy; 2025 Trivia Quiz</p>
-    </footer>
+                <div class="container">
+                    <button id="home-btn">Home</button>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 Trivia Quiz</p>
+        </footer>
+    </div>
     <script src="/client/js/leaderboard.js"></script>
 </body>
 </html>
