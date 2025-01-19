@@ -14,6 +14,36 @@
             "username": "kerv",
             "email": "kdelpe@gmail.com",
             "password": "codek"
+        },
+        {
+            "username": "codek",
+            "email": "codek@codek.com",
+            "password": "codek"
+        },
+        {
+            "username": "codek1",
+            "email": "codek1@codek.com",
+            "password": "codek1"
+        },
+        {
+            "username": "codek2",
+            "email": "codek2@codek2.com",
+            "password": "codek2"
+        },
+        {
+            "username": "codek3",
+            "email": "codek3@codek3.com",
+            "password": "codek3"
+        },
+        {
+            "username": "codek4",
+            "email": "codek4@codek4.com",
+            "password": "codek4"
+        },
+        {
+            "username": "codek5",
+            "email": "codek5@codek5.com",
+            "password": "codek5"
         }
     ]
 }
