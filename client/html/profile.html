@@ -14,12 +14,17 @@
       <div class="cube"></div>
       <nav class="profile-nav">
         <div class="profile-nav-left">
-          <img src="/images/logos/logo.png" alt="Logo" class="logo" />
+          <button id="menu-btn" class="dropdown-btn">Menu</button>
+          <ul id="dropdown-menu" class="dropdown hidden">
+            <li><a href="/settings">Settings</a></li>
+            <li><a href="/client/html/login.html">Log Out</a></li>
+          </ul>
         </div>
         <div class="profile-nav-right">
-          <button id="start-quiz-btn">Take Quiz</button>
-          <button id="leaderboard-btn">Leaderboard</button>
-          <button id="logout-btn">Log Out</button>
+          <ul class="nav-list">
+            <li><button id="start-quiz-btn">Play Trivia</button></li>
+            <li><button id="leaderboard-btn">Leaderboard</button></li>
+          </ul>
         </div>
       </nav>
       <header class="profile-header">

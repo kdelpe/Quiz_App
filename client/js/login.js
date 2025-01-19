@@ -20,7 +20,6 @@ document.getElementById('login-button').addEventListener('click', async function
         const data = await response.json();
         
         if (response.ok) {
-            // Store user info in session storage
             sessionStorage.setItem('currentUser', JSON.stringify(data.user));
             setTimeout(() => {
                 window.location.href = '/profile';

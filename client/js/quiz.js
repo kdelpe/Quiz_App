@@ -204,7 +204,7 @@ async function showResults() {
     endQuizButton.textContent = "Home"; 
     endQuizButton.removeEventListener('click', handleEndQuizClick); 
     endQuizButton.addEventListener('click', () => {
-        window.location.href = '/client/html/home.html';
+        window.location.href = '/client/html/profile.html';
     });
 }
 
