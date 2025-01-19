@@ -1,54 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Leaderboard</title>
-    <link rel="stylesheet" href="/client/css/leaderboard.css">
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="/client/css/leaderboard.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="container-fluid">
     <div class="background">
-        <!-- Animated cubes -->
-        <div class="cube"></div>
-        <div class="cube"></div>
-        <div class="cube"></div>
-        <div class="cube"></div>
-        <div class="cube"></div>
-        <div class="cube"></div>
-        
-        <main>
-            <div class="section">
-                <div class="leaderboard-container">
-                    <div class="heading">
-                        <h1>Leaderboard</h1>
-                    </div>
-                    <div class="score-table">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Rank</th>
-                                    <th>Player</th>
-                                    <th>Score</th>
-                                </tr> 
-                            </thead>
-                            <tbody>
-                                <!-- Data will be populated by JavaScript -->
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+      <!-- Animated cubes -->
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
 
-                <div class="container">
-                    <button id="home-btn">Home</button>
-                </div>
+      <div class="home-btn-container">
+        <button id="home-btn" class="home-btn">Home</button>
+      </div>
+
+      <div class="pyro">
+        <div class="before"></div>
+        <div class="after"></div>
+      </div>
+
+      <main>
+        <div class="section">
+          <div class="leaderboard-container">
+            <div class="heading">
+              <h1>Leaderboard</h1>
             </div>
-        </main>
-        
-        <footer>
-            <p>&copy; 2025 Trivia Quiz</p>
-        </footer>
+            <div class="score-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Rank</th>
+                    <th>Player</th>
+                    <th>Score</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Data will be populated by JavaScript -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <p>&copy; 2025 Trivia Quiz</p>
+      </footer>
+      <script src="/client/js/leaderboard.js"></script>
     </div>
-    <script src="/client/js/leaderboard.js"></script>
-</body>
+  </body>
 </html>
