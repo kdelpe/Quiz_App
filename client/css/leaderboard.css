@@ -15,6 +15,8 @@ body {
     color: #fff;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+    overflow-y: auto;
 }
 
 .container-fluid{
@@ -274,8 +276,12 @@ body {
 .leaderboard-container {
     background: #591BC5;
     border-radius: 20px;
-    padding: 20px;
+    padding: 40px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    max-height: 80vh; 
+    overflow-y: auto; 
+    margin: 20px auto; 
+    width: 90%; 
 }
 
 .heading {
@@ -295,6 +301,8 @@ body {
 
 .score-table {
     width: 100%;
+    overflow-y: auto;
+    display: block;
 }
 
 .score-table table {
@@ -302,6 +310,7 @@ body {
     border: none;
     border-collapse: separate;
     border-spacing: 0 20px;
+    table-layout: fixed;
 }
 
 .score-table th {
@@ -319,7 +328,7 @@ body {
     border: none;
     padding: 15px;
     font-family: 'Liberty';
-    font-size: 24px;
+    font-size: 20px;
     background: #6d2ee1;
     color: white;
     text-align: center;
@@ -351,6 +360,7 @@ body {
     margin-top: 20px;
     display: flex;
     justify-content: center;
+    padding-bottom: 20px; /
 }
 
 .home-btn-container {
@@ -362,10 +372,10 @@ body {
 .home-btn {
     padding: 20px 30px;
     font-family: 'Liberty';
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 500;
-    color: white;
-    background-color: #591BC5;
+    color: #591BC5;
+    background-color: white;
     border: none;
     border-radius: 20px;
     cursor: pointer;
@@ -374,15 +384,17 @@ body {
 
 .home-btn:hover {
     background-color: #6d2ee1;
+    color: white;
 }
 
 footer {
-    position: fixed;
+    position: relative;
     bottom: 10px;
     text-align: center;
     width: 100%;
     color: #fff;
     z-index: 1;
+    margin-top: 20px;
 }
 
 /* Cube Animation */

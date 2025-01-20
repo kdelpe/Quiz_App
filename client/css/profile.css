@@ -328,7 +328,7 @@ body {
 .profile-nav-left #menu-btn {
   text-decoration: none;
   color: #591BC5;
-  font-size: 24px;
+  font-size: 20px;
   font-family: 'Liberty';
   font-weight: 500;
   padding: 20px;
@@ -350,7 +350,7 @@ body {
 button, .dropdown a {
   text-decoration: none;
   color: #591BC5;
-  font-size: 24px;
+  font-size: 20px;
   font-family: 'Liberty';
   font-weight: 500;
   padding: 20px;
@@ -393,7 +393,7 @@ button:hover, .dropdown a:hover {
   padding: 20px;
   text-decoration: none;
   color: #591BC5;
-  font-size: 24px;
+  font-size: 20px;
   font-family: 'Liberty';
   display: block;
   border-radius: 20px;
@@ -441,7 +441,7 @@ header {
   .text {
     font-family: "Liberty";
     font-weight: 100;
-    font-size: 5rem;
+    font-size: 4rem;
     letter-spacing: -0.25em;
     flex-flow: row;
   }
