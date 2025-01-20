@@ -299,27 +299,27 @@ body {
   background-color: transparent;
   position: absolute;
   width: 100%;
-  top: 3%;
+  top: 8%;
 }
 
 .navbar-left .logo {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  margin-left: 30px;
+  margin-left: 90px;
 }
 
 .navbar-right #return-button {
   text-decoration: none;
   background: #EFEEF5;
   color: #591BC5;
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 500;
   font-family: 'Liberty';
-  padding: 10px;
+  padding: 10px 20px;
   border: 1px solid #000000;
   border-radius: 20px;
-  margin-right: 100px;
+  margin-right: 250px;
   z-index: 10;
   position: relative;
   transition: .3s;
@@ -441,7 +441,7 @@ body .text .letter.letter-2 {
 
 /* =============== Login Container ================= */
 .login-container {
-  margin-top: 25%;
+  margin-top: 22%;
   text-align: center;
   color:  #EFEEF5;
 }
@@ -453,11 +453,20 @@ body .text .letter.letter-2 {
   margin: 50px auto;
 }
 
+label {
+  margin-bottom: 5px;
+  font-size: 24px;
+  font-family: 'Liberty';
+  font-weight: bold;
+  color: #EFEEF5;
+  text-align: left;
+}
+
 .login-form input {
-  font-size: large;
+  font-size: 24px;
   font-weight: bold;
   border-radius: 20px;
-  margin-top: 10px;
+  margin-top: 15px;
   margin-bottom: 20px;
   height: 50px;
   border: #EFEEF5 1px solid;
@@ -471,7 +480,7 @@ body .text .letter.letter-2 {
     padding: 20px 10px;
     margin: 20px 0;
     box-sizing: border-box;
-    font-size: 20px;
+    font-size: 24px;
 }
  
 .login-container #login-button {

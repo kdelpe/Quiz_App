@@ -5,14 +5,8 @@
   }
 
 body {
-    /* margin: 0;
-    padding: 0; */
     font-family: Arial, sans-serif;
     box-sizing: border-box;
-    /* color: #fff;
-    background: linear-gradient(132deg, #FC415A, #591BC5, #212335);
-    background-size: 400% 400%;
-    animation: Gradient 15s ease infinite; */
   }
 
   .container-fluid{
@@ -381,7 +375,7 @@ body {
     font-family: 'Liberty';
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
     cursor: pointer;
     width: 200px;
     text-align: center;
@@ -409,11 +403,11 @@ body {
   .deactivate-btn {
     background-color: #dc3545;
     color: #fff;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: bold;
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
     cursor: pointer;
   }
   
