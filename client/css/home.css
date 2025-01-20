@@ -306,7 +306,7 @@ header{
   font-size: 6rem;
   letter-spacing: -0.25em;
   flex-flow: row;
-  margin-top: 10px;
+  margin-top: 25px;
 }
 
 .text .letter {
@@ -410,17 +410,17 @@ body .text .letter.letter-2 {
 }
   
 .home-content #login-btn{
-  width: 200px;
+  width: 300px;
   margin: 20px 10px;
   color: #591BC5;
-  font-size: 20px;
+  font-size: 28px;
   font-weight: 500;
   font-family: 'Liberty';
   border:1px solid #000000;
   background: #EFEEF5;
   border-radius: 20px;
-  padding: 10px;
-  cursor:pointer;
+  padding: 20px;
+  cursor: pointer;
   transition: .3s;
 }
 .home-content #login-btn:hover{
@@ -430,17 +430,17 @@ body .text .letter.letter-2 {
 }
 
 .home-content #signup-btn{
-  width: 200px;
+  width: 300px;
   margin: 20px 10px;
   color: #591BC5;
-  font-size: 20px;
+  font-size: 28px;
   font-weight: 500;
   font-family: 'Liberty';
   border:1px solid #000000;
   background: #EFEEF5;
   border-radius: 20px;
-  padding: 10px;
-  cursor:pointer;
+  padding: 20px;
+  cursor: pointer;
   transition: .3s;
 }
 
@@ -450,17 +450,17 @@ body .text .letter.letter-2 {
   color: white; 
 }
 .home-content #start-quiz-btn{
-  width: 200px;
+  width: 300px;
   margin: 20px 10px;
   color: #591BC5;
-  font-size: 20px;
+  font-size: 28px;
   font-weight: 500;
   font-family: 'Liberty';
   border:1px solid #000000;
   background: #EFEEF5;
   border-radius: 20px;
-  padding: 10px;
-  cursor:pointer;
+  padding: 20px;
+  cursor: pointer;
   transition: .3s;
 }
 
@@ -471,17 +471,17 @@ body .text .letter.letter-2 {
 }
 
 .home-content #view-leaderboard-btn{
-  width: 200px;
+  width: 300px;
   margin: 20px 10px;
   color: #591BC5;
-  font-size: 20px;
+  font-size: 28px;
   font-weight: 500;
   font-family: 'Liberty';
   border:1px solid #000000;
   background: #EFEEF5;
   border-radius: 20px;
-  padding: 10px;
-  cursor:pointer;
+  padding: 20px;
+  cursor: pointer;
   transition: .3s;
 }
 
