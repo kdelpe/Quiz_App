@@ -56,6 +56,33 @@
                     "rank": "5"
                 }
             ]
+        },
+        {
+            "username": "codek4",
+            "email": "codek@codek4.com",
+            "password": "codek4"
+        },
+        {
+            "username": "codek5",
+            "email": "codek5@codek5.com",
+            "password": "codek45"
+        },
+        {
+            "username": "codek7",
+            "email": "code@code.com",
+            "password": "codek6",
+            "stats": [
+                {
+                    "date": "2025-01-20",
+                    "score": 0,
+                    "rank": null
+                },
+                {
+                    "date": "2025-01-20",
+                    "score": 0,
+                    "rank": "14"
+                }
+            ]
         }
     ]
 }
