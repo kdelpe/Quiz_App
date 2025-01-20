@@ -117,4 +117,4 @@ This application uses client-server architecture. The server handles question se
 ---
 
 ## Demo 
-[Walkthrough video link](https://github.com/kdelpe/Quiz_App)
+[Walkthrough video link](https://www.youtube.com/watch?v=KmhPbEnsSeU)
