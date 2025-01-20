@@ -42,8 +42,10 @@
       </div>
       <main class="login-container">
         <form method="GET" action="/" class="login-form">
-          <input type="text" placeholder="Enter Your Username" required />
-          <input type="password" placeholder="Enter Your Password" required />
+          <label for="username-input">Username</label>
+          <input type="text" id="username-input" placeholder="Enter Your Username" required />
+          <label for="password-input">Password</label>
+          <input type="password" id="password-input" placeholder="Enter Your Password" required />
           <input id="login-button" type="button" value="Log in" />
           <a href="/client/html/signup.html">Don't have an account? Register</a>
         </form>
