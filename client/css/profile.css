@@ -6,6 +6,11 @@
 body {
     font-family: 'Josefin Sans', sans-serif;
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .container-fluid{
@@ -441,9 +446,10 @@ header {
   .text {
     font-family: "Liberty";
     font-weight: 100;
-    font-size: 4rem;
+    font-size: 3rem;
     letter-spacing: -0.25em;
     flex-flow: row;
+    margin-top: 5px;
   }
   
   .text .letter {
@@ -539,11 +545,14 @@ header {
 /* =============== Profile Container ==================== */
 
 .profile-container {
-    margin-top: 20%;
+    margin-top: 10%;
     /* text-align: center; */
     color:  #EFEEF5;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    flex: 1; /* Allows the container to grow and fill available space */
+    overflow: hidden; 
   }
 
 .stats-table {
@@ -558,7 +567,7 @@ header {
     text-align: center;
     width: 400px;
     font-family: 'Liberty';
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 500;
 }
 
@@ -572,6 +581,7 @@ footer {
     text-align: center;
     width: 100%;
     color: #EFEEF5;
+    margin-top: auto;
   }
 
 /* ============= Animate Background ==============*/
