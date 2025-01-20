@@ -313,7 +313,7 @@ body {
   text-decoration: none;
   background: #EFEEF5;
   color: #591BC5;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 500;
   font-family: 'Liberty';
   padding: 10px 20px;
@@ -344,7 +344,7 @@ header {
 .text {
   font-family: "Liberty";
   font-weight: 100;
-  font-size: 5rem;
+  font-size: 4rem;
   letter-spacing: -0.25em;
   flex-flow: row;
 }
@@ -441,7 +441,7 @@ body .text .letter.letter-2 {
 
 /* =============== Login Container ================= */
 .login-container {
-  margin-top: 22%;
+  margin-top: 18%;
   text-align: center;
   color:  #EFEEF5;
 }
@@ -455,7 +455,7 @@ body .text .letter.letter-2 {
 
 label {
   margin-bottom: 5px;
-  font-size: 24px;
+  font-size: 20px;
   font-family: 'Liberty';
   font-weight: bold;
   color: #EFEEF5;
@@ -480,14 +480,14 @@ label {
     padding: 20px 10px;
     margin: 20px 0;
     box-sizing: border-box;
-    font-size: 24px;
+    font-size: 20px;
 }
  
 .login-container #login-button {
   width: 140px;
   margin:20px 150px;
   color: #591BC5;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 500;
   font-family: 'Liberty';
   border:1px solid #000000;
