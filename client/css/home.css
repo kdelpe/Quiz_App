@@ -303,7 +303,7 @@ header{
 .text {
   font-family: "Liberty";
   font-weight: 100;
-  font-size: 6rem;
+  font-size: 5rem;
   letter-spacing: -0.25em;
   flex-flow: row;
   margin-top: 25px;
@@ -401,7 +401,7 @@ body .text .letter.letter-2 {
   
 /* ================Home Content Section=================== */
 .home-content{
-  margin-top:25%;
+  margin-top:20%;
   text-align: center;
   color:  #EFEEF5;
   display: flex;
