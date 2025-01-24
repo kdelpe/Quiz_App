@@ -83,6 +83,40 @@
                     "rank": "14"
                 }
             ]
+        },
+        {
+            "username": "michael",
+            "email": "mestebam282@gmail.com",
+            "password": "1234",
+            "stats": [
+                {
+                    "date": "2025-01-20",
+                    "score": 2,
+                    "rank": null
+                },
+                {
+                    "date": "2025-01-20",
+                    "score": 2,
+                    "rank": "6"
+                }
+            ]
+        },
+        {
+            "username": "michaele",
+            "email": "michael@gmail.com",
+            "password": "1234",
+            "stats": [
+                {
+                    "date": "2025-01-23",
+                    "score": 2,
+                    "rank": null
+                },
+                {
+                    "date": "2025-01-23",
+                    "score": 2,
+                    "rank": "7"
+                }
+            ]
         }
     ]
 }
