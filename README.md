@@ -40,8 +40,8 @@ This application uses client-server architecture. The server handles question se
 
 ## Team Members and Roles
 - **Kervens Delpe**: Team Leader, server setup, backend logic for quiz & timer, Debugging.
-- **Angel Difo**: DB (json file) setup, Frontend development, CSS styling.
-- **Michael Esteban**: Frontend development & CSS styling Home Page, Login, Results, Settings, Debugging
+- **Angel Difo**: DB (json file) setup, mongoDB migration, Frontend development, CSS styling.
+- **Michael Esteban**: Frontend development & CSS styling Home Page, Login, Results, Settings, API, docs, Debugging
 
 ---
 
@@ -66,53 +66,6 @@ This application uses client-server architecture. The server handles question se
    ```
 5. Open the client in your browser:
    - Visit `http://localhost:[PORT]` 
-
-6. Data setup:
-   - Ensure the following JSON files are in place for proper functionality:
-      - `data/userDB.json`: This file is used for storing user data, including usernames, emails, stats, and rankings.
-      - **Format Example**
-      ```json
-      {
-         "users": 
-         [
-            {
-               "username": "testUser",
-               "email": "testuser@example.com",
-               "password": "hashed_password_here",
-               "stats": [
-                  { "date": "2025-01-01", "score": 80, "rank": 1 },
-                  { "date": "2025-01-15", "score": 95, "rank": 1 }
-               ]
-            }
-         ]
-      }
-      ```
-      - `data/questions.json`: This file should contain all the quiz questions in a structured format with the `"correct"` field taking the index of the array.
-      - **Format Example**
-      ```json
-      [
-         {
-            "question": "A flashing red traffic light signifies that a driver should do what?",
-            "options": [
-               "stop",
-               "speed up",
-               "proceed with caution",
-               "honk the horn"
-            ],
-            "correct": 0
-         },
-         {
-            "question": "A knish is traditionally stuffed with what filling?",
-            "options": [
-               "potato",
-               "creamed corn",
-               "lemon custard",
-               "raspberry jelly"
-            ],
-            "correct": 0
-         },
-      ]
-      ```
 
 ---
 
