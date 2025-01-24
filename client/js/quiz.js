@@ -260,4 +260,3 @@ nextBtn.addEventListener('click', () => {
         showResults();
     }
 });
-  
