@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const fs = require('fs').promises;
 const path = require('path');
+const User = require('../models/User');
+const Leaderboard = require('../models/Leaderboard');
 
 router.use(express.json());
 
@@ -9,32 +10,24 @@ router.post('/', async (req, res) => {
     try {
         const { username, email, password } = req.body;
         
-        const userDBPath = path.join(__dirname, '../../data/userDB.json');
-        const data = await fs.readFile(userDBPath, 'utf8');
-        const userDB = JSON.parse(data);
-        
         // Check if user already exists
-        if (userDB.users.some(user => user.email === email)) {
+        const existingUser = await User.findOne({ email });
+        if (existingUser) {
             return res.status(400).json({ error: 'User already exists' });
         }
         
-        userDB.users.push({ username, email, password });
+        // Create new user
+        const user = new User({ username, email, password });
+        await user.save();
         
-        await fs.writeFile(userDBPath, JSON.stringify(userDB, null, 4));
-        
-        // Create initial leaderboard entry with score 0
-        const leaderboardPath = path.join(__dirname, '../../data/leaderboardDB.json');
-        const leaderboardData = await fs.readFile(leaderboardPath, 'utf8');
-        const leaderboardDB = JSON.parse(leaderboardData);
-        
-        leaderboardDB.leaderboard.push({
-            rank: (leaderboardDB.leaderboard.length + 1).toString(),
+        // Create initial leaderboard entry
+        const leaderboardCount = await Leaderboard.countDocuments();
+        const leaderboardEntry = new Leaderboard({
+            rank: (leaderboardCount + 1).toString(),
             user: username,
             score: "0"
         });
-        
-        // Save updated leaderboard
-        await fs.writeFile(leaderboardPath, JSON.stringify(leaderboardDB, null, 4));
+        await leaderboardEntry.save();
         
         res.status(201).json({ message: 'User registered successfully' });
     } catch (error) {

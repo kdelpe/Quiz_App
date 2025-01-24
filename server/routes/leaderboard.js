@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const fs = require('fs').promises;
 const path = require('path');
+const User = require('../models/User');
+const Leaderboard = require('../models/Leaderboard');
 
 router.use(express.json());
 
@@ -17,58 +18,51 @@ router.post('/update-score', async (req, res) => {
             return res.status(400).json({ error: 'Username and score are required' });
         }
 
-        const userDBPath = path.join(__dirname, '../../data/userDB.json');
-        const leaderboardPath = path.join(__dirname, '../../data/leaderboardDB.json');
+        // Update or create user's leaderboard entry
+        let leaderboardEntry = await Leaderboard.findOne({ user: username });
+        const currentScore = parseInt(score);
 
-        // Load userDB
-        const userDBData = await fs.readFile(userDBPath, 'utf8');
-        const userDB = JSON.parse(userDBData);
-
-        // Load leaderboard
-        const leaderboardData = await fs.readFile(leaderboardPath, 'utf8');
-        const leaderboardDB = JSON.parse(leaderboardData);
-
-        const now = new Date();
-        const date = now.toISOString().split('T')[0];
-
-        // Update user stats
-        let user = userDB.users.find(user => user.username === username);
-        if (!user) {
-            // Create new user if not exists
-            user = { username, email: '', password: '', stats: [] }; // Add email/password if necessary
-            userDB.users.push(user);
-        }
-
-        // Add new stat
-        user.stats.push({ date, score: parseInt(score), rank: null });
-
-        // Update leaderboard
-        let userInLeaderboard = leaderboardDB.leaderboard.find(entry => entry.user === username);
-
-        if (userInLeaderboard) {
-            if (parseInt(score) > parseInt(userInLeaderboard.score)) {
-                userInLeaderboard.score = score.toString();
+        if (leaderboardEntry) {
+            if (currentScore > parseInt(leaderboardEntry.score)) {
+                leaderboardEntry.score = score.toString();
+                await leaderboardEntry.save();
             }
         } else {
-            leaderboardDB.leaderboard.push({
-                rank: leaderboardDB.leaderboard.length + 1,
+            const count = await Leaderboard.countDocuments();
+            leaderboardEntry = new Leaderboard({
+                rank: (count + 1).toString(),
                 user: username,
                 score: score.toString()
             });
+            await leaderboardEntry.save();
         }
 
-        // Recalculate leaderboard ranks
-        leaderboardDB.leaderboard.sort((a, b) => parseInt(b.score) - parseInt(a.score));
-        leaderboardDB.leaderboard.forEach((entry, index) => {
-            entry.rank = [index + 1].toString();
-        });
+        // Update all ranks
+        const allEntries = await Leaderboard.find().sort({ score: -1 });
+        for (let i = 0; i < allEntries.length; i++) {
+            allEntries[i].rank = (i + 1).toString();
+            await allEntries[i].save();
+        }
 
-        const updatedRank = leaderboardDB.leaderboard.find(entry => entry.user === username)?.rank;
-        user.stats.push({ date, score: parseInt(score), rank: updatedRank });
+        // Update user stats
+        const user = await User.findOne({ username });
+        if (user) {
+            const now = new Date();
+            const date = now.toISOString().split('T')[0];
+            const updatedRank = (await Leaderboard.findOne({ user: username }))?.rank;
 
-        // Save updated files
-        await fs.writeFile(userDBPath, JSON.stringify(userDB, null, 4));
-        await fs.writeFile(leaderboardPath, JSON.stringify(leaderboardDB, null, 4));
+            if (!user.stats) {
+                user.stats = [];
+            }
+            
+            user.stats.push({
+                date,
+                score: currentScore,
+                rank: updatedRank
+            });
+            
+            await user.save();
+        }
 
         res.json({ message: 'Score updated successfully' });
     } catch (error) {
