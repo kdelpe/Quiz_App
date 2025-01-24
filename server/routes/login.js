@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const fs = require('fs').promises;
 const path = require('path');
+const User = require('../models/User');
 
 router.use(express.json());
 
@@ -9,12 +9,8 @@ router.post('/', async (req, res) => {
     try {
         const { username, password } = req.body;
         
-        const userDBPath = path.join(__dirname, '../../data/userDB.json');
-        const data = await fs.readFile(userDBPath, 'utf8');
-        const userDB = JSON.parse(data);
-        
-        // Verify user password
-        const user = userDB.users.find(u => u.username === username && u.password === password);
+        // Find user in MongoDB
+        const user = await User.findOne({ username, password });
         
         if (user) {
             res.json({ 
