@@ -41,7 +41,7 @@ This application uses client-server architecture. The server handles question se
 ## Team Members and Roles
 - **Kervens Delpe**: Team Leader, server setup, backend logic for quiz & timer, Debugging.
 - **Angel Difo**: DB (json file) setup, mongoDB migration, Frontend development, CSS styling.
-- **Michael Esteban**: Frontend development & CSS styling Home Page, Login, Results, Settings, API, docs, Debugging
+- **Michael Esteban**: Heroku, Frontend development & CSS styling Home Page, Login, Results, Settings, API, docs, Debugging
 
 ---
 
